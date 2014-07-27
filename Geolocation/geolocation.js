@@ -7,18 +7,33 @@
     //http://ericpanorel.net/2013/08/11/angularjs-and-google-maps/
     angular.module('geolocation', [])
 
-        .directive(myMap, function () {
+        .directive('myMap', function () {
 
             var linkFunction = function (scope, elem, attrs) {
 
-                var map,
+                var map,infoWindow;
+                var markers =[];
 
-            }
+                var mapOptions={
+                    center: new google.maps.LatLng(50,2),
+                    zoom:4,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                }
+                function initMap(){
+                  if(map===void 0){
+                      //TODO: why elem[0]
+                      map=new google.maps.Map(elem[0],mapOptions)
+
+                  }
+                }
+                initMap();
+
+            };
 
 
             return {
                 restrict: 'A',
-                template: '<div id="map-canvas" class="jumbotron"></div>',
+                template: '<div id="map-canvas" class="my-jumbotron"></div>',
                 replace: true,
                 link: linkFunction
             }
