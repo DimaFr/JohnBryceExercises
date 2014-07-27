@@ -1,0 +1,17 @@
+{
+    "name": "JohnBryceExercises",
+    "version": "0.0.1",
+    "authors": [
+        "DimaFr <dima.friedman@gmail.com>"
+    ],
+    "license": "MIT",
+    "ignore": [
+        "**/.*",
+        ".idea",
+        "node_modules",
+        "bower_components",
+        "components",
+        "test",
+        "tests"
+    ]
+}

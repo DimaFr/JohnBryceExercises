@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../components/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="style.css"/>
+    <script src="../components/jquery/dist/jquery.min.js"></script>
+    <script src="../components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="main.js"></script>
+</head>
+<body>
+<div class="navbar navbar-inverse navbar-static-top">
+    <div class="container">
+        <a href="#" class="navbar-brand"><b>Some Bold Text with Link</b></a>
+        <!--button to expand collapsable bar-->
+        <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+            <!--instead of some icon-->
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+
+        </button>
+        <!--collapse when resolution is small-->
+        <div class="collapse navbar-collapse navHeaderCollapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="#">Home</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Rent <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">123</a></li>
+                        <li><a href="#">456</a></li>
+                        <li><a href="#">789</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Return</a></li>
+                <li><a href="#">Something</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#contact" data-toggle="modal">Contact</a></li>
+            </ul>
+
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="jumbotron">
+
+        <h1>hgjgg khk kh</h1>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci dolorum ea incidunt nesciunt nobis optio
+            quidem quos sint tenetur voluptates. Aliquid excepturi explicabo maxime sunt? Id pariatur rem repellendus
+            velit?</p>
+
+
+           <img src="../resources/twitter-bootstrap.jpg"
+                                                   class="img-responsive img-rounded"/>
+
+        <p></p>
+        <a href="#" class="btn btn-primary pull-right">Bootstrap</a>
+    </div>
+
+</div>
+
+
+<div class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container">
+        <p class="navbar-text pull-left">hgjgsdhahafhaljdl gjgj hjgjg khk (c) <span id="currentYear"></span></p>
+        <a href="#" class="btn navbar-btn btn-danger pull-right">Bootstrap</a>
+    </div>
+</div>
+<!--modal view appears when "Contact" pressed-->
+<div class="modal fade" id="contact" role="dialog">
+    <div class="modal-dialog">
+        <div class="model-content">
+            <form class="form-horizontal">
+                <div class="modal-header"><h1>Contact us</h1></div>
+
+            </form>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
