@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link rel="stylesheet" href="../components/jquery.mobile/jquery.mobile-1.4.3.css"/>
+    <link rel="stylesheet" href="../components/fotorama-4.5.2/fotorama.css"/>
+    <script src="../components/jquery/dist/jquery.js"></script>
+    <script src="../components/jquery.mobile/jquery.mobile-1.4.3.js"></script>
+    <script src="../components/fotorama-4.5.2/fotorama.js"></script>
+    <script src="main.js"></script>
+
+</head>
+<body>
+<!--HOME PAGE-->
+<div data-role="page" id="home">
+    <div data-role="header"><h1>Rent Some Car</h1></div>
+    <div data-role="content" id="mainHome">
+        <ul data-role="listview" data-inset="true">
+            <li><a href="#audiPage">Audi</a></li>
+            <li><a href="#listPage">List</a></li>
+            <li><a href="#">Mercedes</a></li>
+            <li><a href="#registerPage">Register</a></li>
+        </ul>
+    </div>
+    <div data-role="footer">
+        <h4>Dima Friedman 2014(c)</h4>
+    </div>
+</div>
+<!--AUDI PAGE-->
+<div data-role="page" id="audiPage">
+    <div class="myGallery">
+        <lo data-role="listview">
+            <li><a href="http://www.audi.com">Worldwide Site</a></li>
+            <li><a href="#">Local Site</a></li>
+
+        </lo>
+        <div class="fotorama" data-width="700" data-ratio="700/300" data-max-width="100%">
+            <img src="" alt=""/>
+            <img src="" alt=""/>
+            <img src="" alt=""/>
+        </div>
+    </div>
+</div>
+<!--List PAGE-->
+<div data-role="page" id="listPage">
+    <div data-role="header"><h1>List</h1></div>
+    <button id="addCarBtn">Add Car</button>
+  <ul data-role="listview">
+      <li data-role="list-divider">a</li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li data-role="list-divider">b</li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li data-role="list-divider">c</li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li data-role="list-devider">d</li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li data-role="list-divider">e</li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li data-role="list-divider">f</li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li data-role="list-divider">g</li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li data-role="list-divider">i</li>
+      <li></li>
+      <li></li>
+      <li></li>
+  </ul>
+
+</div>
+<!--Register PAGE-->
+<div data-role="page" id="registerPage">
+    <div data-role="header"><h1>Register</h1></div>
+    <div data-role="content">
+        <form>
+            <div data-role="fieldcontain">
+                <lable for="name">Name:</lable>
+                <input type="text" name="name" id="name"/>
+            </div>
+            <div data-role="fieldcontain">
+                <lable for="email">Email:</lable>
+                <input type="email" name="email" id="email"/>
+            </div>
+            <div data-role="fieldcontain">
+                <lable for="textarea">Comments:</lable>
+                <input type="textarea" id="textarea"/>
+            </div>
+            <div data-theme="a">
+                <button >Send</button>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -11,17 +11,24 @@
 
             var linkFunction = function (scope, elem, attrs) {
 
+                console.log(attrs.ngModel);
+
                 var map,infoWindow;
                 var markers =[];
 
                 var mapOptions={
                     center: new google.maps.LatLng(50,2),
                     zoom:4,
-                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                    mapTypeId: google.maps.MapTypeId.ROADMAP,
+                    zoomControl: true,
+                    panControl: true
+
                 }
+                console.log(elem[0]);
                 function initMap(){
                   if(map===void 0){
                       //TODO: why elem[0]
+                      console.log(elem[0]);
                       map=new google.maps.Map(elem[0],mapOptions)
 
                   }
