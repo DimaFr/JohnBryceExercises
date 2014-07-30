@@ -6,15 +6,8 @@
         .controller({'MapController': mapController})
 
 
-
-
-
-
-
-
-
     function mapController($scope) {
-//create map and set default position
+        //create map and set default position
         this.map = {
             center: {
                 latitude: 45,
@@ -24,6 +17,7 @@
         }
         console.log('map should init')
 //TODO: add alert if geolocation is not supported by browser
+//TODO: create geolocation service!!!
         if ("geolocation" in navigator) {
             /* geolocation is available */
             console.log("geolocation is available")
@@ -31,7 +25,7 @@
             /* geolocation IS NOT available */
             console.log("geolocation IS NOT available")
         }
-//Set current position
+        //Set current position
         var onSuccess = function (position) {
             console.log(position);
             this.map = {center: {
@@ -48,9 +42,5 @@
 
         navigator.geolocation.getCurrentPosition(onSuccess, onError);
     }
-
-
-//
-
 
 }(window, angular));

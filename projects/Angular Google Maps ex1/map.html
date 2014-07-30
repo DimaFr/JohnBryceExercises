@@ -18,24 +18,25 @@
 
 
     <script src="map.module.js"></script>
+    <script src="map.travelpoints.controller.js"></script>
 </head>
 <body>
 <div class="container"><h2>Angular-Google-Maps</h2></div>
 <div class="container myMap" ng-controller="MapController as mapCtrl">
     <google-map center="mapCtrl.map.center" zoom="mapCtrl.map.zoom"></google-map>
 </div>
-<div class="container" ng-controller="TravelPointsController">
+<div class="container" ng-controller="TravelPointsController as pointsCtrl">
     <div class="well">
         <div class="row">
             <div class="col-md-6">
                 <div class="input-group-btn">
-                    <label for="Starting Point"></label><input ng-model="startPos" class="form-control" type="text"
+                    <label for="Starting Point"></label><input ng-model="pointsCtrl.startPoint" class="form-control" type="text"
                                                                placeholder="Choose starting point, or click on map..."/>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="input-group-btn">
-                    <label for="Destination Point"></label><input ng-model="destPos" class="form-control" type="text"
+                    <label for="Destination Point"></label><input ng-model="pointsCtrl.destPoint" class="form-control" type="text"
                                                                   placeholder="Choose destination... "/>
                 </div>
             </div>
