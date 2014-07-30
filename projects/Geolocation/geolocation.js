@@ -33,10 +33,11 @@
 
                   }
                 }
+
+
                 initMap();
 
             };
-
 
             return {
                 restrict: 'A',
