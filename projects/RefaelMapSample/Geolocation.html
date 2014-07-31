@@ -1,0 +1,177 @@
+﻿<!--
+    Author: Refael Mimran 2014
+
+
+    HTML5 Geolocation-
+    user locaion from ip/gps/wifi/cell
+    navigator.geolocation.getCurrentPosition() / navigator.geolocation.watchCurrentPosition()
+    position:
+        latitude / longitude / accuracy
+        altitude / altitudeAccuracy / heading / speed
+        timestamp
+    
+-->
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="author" content="@refaelm">
+    <title>Geolocation</title>
+    <style>
+        header {
+            left: 50%;
+            position: absolute;
+            margin-left: -142.5px;
+        }
+
+        #controls {
+            position: absolute;
+            top: 93%;
+            left: 50%;
+            margin-left: -209px;
+        }
+
+        #map{
+            width: 700px;
+            height: 700px;
+            position:absolute;
+            top: 50%;
+            left:50%;
+            margin-top: -350px;
+            margin-left: -350px;
+        }
+    </style>
+
+    <!--<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>-->
+
+    <script type="text/javascript"
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAGbgjEpU3pW8b5YqsfqXq-j_HkdEl3PMs">
+    </script>
+    <script>
+        var foundYou = false;
+
+        function findMe() {
+            if (!navigator.geolocation) {
+                alert("Geolocation is not supported!");
+                return;
+            }
+
+            navigator.geolocation.getCurrentPosition(successFunc, failureFunc);
+        }
+
+        function successFunc(position) {
+            foundYou = true;
+
+            latitude = position.coords.latitude;
+            longitude = position.coords.longitude;
+            accuracy = position.coords.accuracy;
+            timeStamp = (new Date(position.timestamp)).toLocaleString();
+
+            alert("You are in: \nLat: " + latitude +
+                  "\nLong: " + longitude +
+                  "\nAccuracy: " + accuracy+
+                  "\nTimestamp: " + timeStamp);
+        }
+
+        function failureFunc(err) {
+            var msg;
+
+            switch (err.code) {
+                case 0: {
+                    msg = "Unkown Error: " + err.message;
+                    break;
+                }
+                case 1: {
+                    msg = "Permission Denied";
+                    break;
+                }
+
+                case 2: {
+                    msg = "Position Unavailable";
+                    break;
+                }
+
+                case 3: {
+                    msg = "Request Timeout";
+                    break;
+                }
+
+
+                default: {
+                    msg = "Go home. Your drunk!";
+                }
+            }
+
+            alert(msg);
+        }
+
+        function ShowMe() {
+            if (!foundYou) {
+                alert("how can i show what i havent found?!")
+                return;
+            }
+
+            var mapOptions = {
+                zoom: 10,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+
+            map = new google.maps.Map(document.getElementById('map'), mapOptions);
+
+            var geolocate = new google.maps.LatLng(latitude, longitude);
+
+            map.setCenter(geolocate);
+
+            var markerOptions = {
+                position: geolocate,
+                map: map,
+                animation: google.maps.Animation.DROP,
+                title: "You"
+            };
+
+            var marker = new google.maps.Marker(markerOptions);
+        }
+
+        function showDestination() {
+            var address = document.getElementById("address").value;
+
+            geocoder = new google.maps.Geocoder();
+
+            /* code taken from:
+                https://developers.google.com/maps/documentation/javascript/geocoding
+            */
+
+            geocoder.geocode({ 'address': address }, function (results, status) {
+                if (status == google.maps.GeocoderStatus.OK) {
+                    map.setCenter(results[0].geometry.location);
+                    var marker = new google.maps.Marker({
+                        map: map,
+                        position: results[0].geometry.location
+                    });
+                } else {
+                    alert("Geocode was not successful for the following reason: " + status);
+                }
+            });
+
+        }
+
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>HTML5 Geolocation</h1>
+    </header>
+    
+    <div id="controls">
+        <button onclick="findMe()">Find ME</button>
+        <button onclick="ShowMe()">Show ME</button>
+        Where to: <input type="text" id="address" />
+        <button onclick="showDestination()">Go!</button>
+    </div>
+
+    <div id="map"></div>
+</body>
+</html>
