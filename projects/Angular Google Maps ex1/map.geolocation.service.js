@@ -5,11 +5,11 @@ angular.module('myMap')
 .factory({"GeolocationFactory":geolocationFactory})
 function geolocationFactory(){
 
-    var currentLocation =
+    var currentLocation;
 
-    function currentLocation
+    function currentLocation(){}
 
     return{
         CurrentLocation: currentLocation
-    };
+    }
 }

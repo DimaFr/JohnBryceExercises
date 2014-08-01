@@ -16,38 +16,58 @@
     <script src="../../components/angular-google-maps/dist/angular-google-maps.js"></script>
 
 
-    <script src="map.module.js"></script>
+    <script src="map.main.controller.js"></script>
     <script src="map.travelpoints.controller.js"></script>
     <script src="map.services.js"></script>
 </head>
 <body>
 <div class="container"><h2>Angular-Google-Maps</h2></div>
 <div ng-controller="MapController">
+
     <div class="container myMap">
+        <div class="row">
+            <div class="col-sm-12">
 
-        <google-map center="map.center" control="map.control" zoom="map.zoom" ng-if="loadMap"></google-map>
-    </div>
-
-    <div class="container" ng-controller="TravelPointsController">
-        <div class="well">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="input-group-btn">
-                        <label for="Starting Point"></label><input ng-model="startPoint" class="form-control"
-                                                                   type="text"
-                                                                   placeholder="Choose starting point, or click on map..."/>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="input-group-btn">
-                        <label for="Destination Point"></label><input ng-change="calculateRoute()" ng-model="destPoint"
-                                                                      class="form-control"
-                                                                      type="text"
-                                                                      placeholder="Choose destination... "/>
-                    </div>
-                </div>
+                <google-map center="map.center" control="map.control" zoom="map.zoom" ng-if="loadMap"></google-map>
             </div>
         </div>
+    </div>
+
+
+    <div class="container" ng-controller="TravelPointsController">
+
+        <div class="well">
+            <div class="row">
+                <div class="col-sm-6 col-xs-12">
+                    <div class="input-group">
+                     <span class="input-group-btn">
+                        <button class="btn btn-default" type="button">X</button>
+                     </span>
+                        <input ng-model="startPoint" type="text" class="form-control"
+                               placeholder="Choose starting point, or click on map...">
+                    </div>
+                    <!-- /input-group -->
+                </div>
+                <!-- /.col-lg-6 -->
+                <div class="col-sm-6 col-xs-12">
+                    <div class="input-group">
+                        <input ng-model="destPoint" type="text" class="form-control"
+                               placeholder="Choose destination... ">
+                     <span class="input-group-btn">
+                      <button class="btn btn-default" type="button" ng-click="calculateRoute()">Go!</button>
+                     </span>
+                    </div>
+                    <!-- /input-group -->
+                </div>
+                <!-- /.col-lg-6 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!--/.well-->
+        <div class="well">
+            <p>The estimated trip distance is {{distance}} km the rent price is {{distance*2}} ILS.</p>
+        </div>
+
     </div>
 </div>
 

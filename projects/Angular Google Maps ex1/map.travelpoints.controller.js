@@ -9,49 +9,50 @@
 
     function travelPointsController(scope) {
         console.log("This is TravelPointsController");
-
-//
-//        var directionsDisplay;
-//        var directionsService = new google.maps.DirectionsService();
-//
-//        if (scope.map&&scope.loadMap) {
-//            directionsDisplay = new google.maps.DirectionsRenderer();
-//            directionsDisplay.setMap(map);
-//        } else {
-//            console.log("poits ctrl can not read map in scope");
+        //TODO: remove before release - hardcoded points
+        scope.startPoint = "Paris";
+        scope.destPoint = "Dakar";
+        var directionsDisplay;
+        directionsDisplay = new google.maps.DirectionsRenderer();
+//TODO: not in use
+//        function clearMap() {
+//            if (directionsDisplay) {
+//                console.log(directionsDisplay.maps)
+//                directionsDisplay.setMap(null);
+//            }
 //        }
+
+        function initialize() {
+            //TODO: check if old map distroys clear directions
+            var myGMap = scope.map.control.getGMap();
+            directionsDisplay.setMap(myGMap);
+        }
+
         scope.calculateRoute = function () {
-
-            var directionsDisplay;
-            var directionsService = new google.maps.DirectionsService();
-
-console.log(scope.map)
-            if (scope.map) {
-                console.log("map is here in child")
-                directionsDisplay = new google.maps.DirectionsRenderer();
-                directionsDisplay.setMap(scope.map.control.getGMap());
-            } else {
-                console.log("points ctrl can not read map in scope");
-            }
-
-
             var startPoint = scope.startPoint || "";
-            var destPoint = scope.destPoint || "";
-
-            var request = {
-                origin: startPoint,
-                destination: destPoint,
-                travelMode: google.maps.TravelMode.DRIVING
-            }
-            directionsService.route(request, function (response, status) {
-                if (status == google.maps.DirectionsStatus.OK) {
-                    directionsDisplay.setDirections(response);
-
-                } else {
-                    console.log(status)
+            var destPoint = scope.destPoint || ""
+            var directionsService = new google.maps.DirectionsService();
+            function createRoute(firstPoint, secondPoint) {
+                var request = {
+                    origin: firstPoint,
+                    destination: secondPoint,
+                    travelMode: google.maps.TravelMode.DRIVING,
+                    unitSystem: google.maps.UnitSystem.METRIC
                 }
+                directionsService.route(request, function (response, status) {
+                    if (status == google.maps.DirectionsStatus.OK) {
+                        directionsDisplay.setDirections(response);
+                        //show travel distance
+                        scope.distance = response.routes[0].legs[0].distance.value / 1000;
+                        console.log("Distance: " + response.routes[0].legs[0].distance.value)
+                    } else {
+                        console.log(status)
+                    }
+                });
+            }
 
-            });
+            initialize();
+            createRoute(startPoint, destPoint);
         }
     }
 })

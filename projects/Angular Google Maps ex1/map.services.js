@@ -11,7 +11,36 @@
 //get LatLng from dropped marker
 //calculate route,return distance in km
     function mapFactory(q) {
-        var myLocationPoint = getMyLocation()
+        var myLocationPoint = getMyLocation();
+
+
+        function newMap(customPoint){
+            var map;
+            if(!customPoint){
+                map = {
+                    center: {
+                        latitude: 42,
+                        longitude: 10
+                    },
+
+                    zoom: 4,
+                    control:{}
+                }
+            }else {
+
+                map = {
+                    center: {
+                        latitude: customPoint.latitude,
+                        longitude: customPoint.longitude
+                    },
+                    control: {},
+                    zoom: 14
+                }
+            }
+            return map;
+        }
+
+
         function getMyLocation() {
             //create Q to return promise, we will load map only when we get the points or answer
             var deferred = q.defer();
@@ -30,7 +59,8 @@
             return deferred.promise;
         }
         var MapFactory = {
-            MyLocationPoint: myLocationPoint
+            MyLocationPoint: myLocationPoint,
+            NewMap: newMap
         }
         return MapFactory;
     }

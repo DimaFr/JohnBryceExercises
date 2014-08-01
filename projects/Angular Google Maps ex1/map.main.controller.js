@@ -21,26 +21,15 @@
             console.log("latitude: " + latLng.latitude + "\n" +
                 "longitude: " + latLng.longitude)
             //load my location
-            scope.map = {
-                center: {
-                    latitude: latLng.latitude,
-                    longitude: latLng.longitude
-                },
-                control:{},
-                zoom: 14
-            }
+            scope.map=MapFactory.NewMap(latLng);
+            console.log(scope.map);
             scope.loadMap = true;
             console.log('map should init')
         }, function (msg) {
             console.log("Failed: to resolve promise" + msg)
             //load default location
-            scope.map = {
-                center: {
-                    latitude: 42,
-                    longitude: 10
-                },
-                zoom: 4
-            }
+            scope.map=MapFactory.NewMap();
+
             scope.loadMap = true;
         })
     }
