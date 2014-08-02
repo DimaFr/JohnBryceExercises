@@ -3,7 +3,7 @@
  */
 (function (window, angular) {
     angular.module('myMap', ['google-maps'])
-        .controller({'MapController': ['$scope', 'MapFactory', mapController]})
+        .controller({'MapController': ['$scope', 'MapFactory', mapController]});
 
     function mapController(scope, MapFactory) {
         console.log("MapController is loaded");
@@ -17,17 +17,22 @@
         }
         //create map and set default position
         scope.loadMap = false;
+
+
         var pointPromise = MapFactory.MyLocationPoint;
         pointPromise.then(function (latLng) {
             console.log("latitude: " + latLng.latitude + "\n" +
-                "longitude: " + latLng.longitude)
+                "longitude: " + latLng.longitude);
             //load my location
             scope.map=MapFactory.NewMap(latLng);
+
+
             console.log(scope.map);
+
             scope.loadMap = true;
             console.log('map should init')
         }, function (msg) {
-            console.log("Failed: to resolve promise" + msg)
+            console.log("Failed: to resolve promise" + msg);
             //load default location
             scope.map=MapFactory.NewMap();
 

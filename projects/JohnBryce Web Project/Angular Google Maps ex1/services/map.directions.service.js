@@ -5,10 +5,10 @@
 
 
     angular.module('myMap')
-        .factory({'MapDirectionsFactory': ["$scope", mapDirectionsFactory]})
+        .factory({'MapDirectionsFactory': ["$scope", mapDirectionsFactory]});
 
     function mapDirectionsFactory(scope) {
-        console.log("MapDirectionsFactory is loaded")
+        console.log("MapDirectionsFactory is loaded");
         var routeDistance = 0;
         var directionsDisplay;
         directionsDisplay = new google.maps.DirectionsRenderer();
@@ -24,7 +24,7 @@
                 destination: secondPoint,
                 travelMode: google.maps.TravelMode.DRIVING,
                 unitSystem: google.maps.UnitSystem.METRIC
-            }
+            };
             directionsService.route(request, function (response, status) {
                 if (status == google.maps.DirectionsStatus.OK) {
                     directionsDisplay.setDirections(response);
@@ -49,7 +49,7 @@
         var MapDirectionsFactory = {
             CalculateRoute: calculateRoute,
             RouteDistance: routeDistance
-        }
+        };
         return MapDirectionsFactory;
     }
 

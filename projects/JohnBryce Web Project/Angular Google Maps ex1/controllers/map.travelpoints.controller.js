@@ -5,38 +5,50 @@
 
 
     angular.module('myMap')
-        .controller({"TravelPointsController": ['$scope', travelPointsController]})
+        .controller({"TravelPointsController": ['$scope','MapFactory',travelPointsController]});
 
-    function travelPointsController(scope) {
+    function travelPointsController(scope,MapFactory) {
         console.log("TravelPointsController is loaded");
-        //TODO: remove before release - hardcoded points
-        scope.startPoint = "Paris";
-        scope.destPoint = "Dakar";
-//        var startPoint = scope.startPoint;
-//        var destPoint = scope.destPoint;
-//        scope.calculateRoute = MapDirectionsFactory.CalculateRoute(startPoint,destPoint);
-//        = MapDirectionsFactory.RouteDistance;
+        //TODO:  before release - hardcoded points,add default points if no current location
+
+       MapFactory.MyLocationPoint.then(function(point) {
+           console.log(point);
+           MapFactory.GetMyAddressPromise(point.latitude,point.longitude).then(function(results){
+               console.log(results);
+               scope.startPoint = results.results[1].formatted_address;
+               scope.destPoint = "Dakar";
+           })
+       });
+
+
+
+        scope.goToMyLocation=function(){
+            MapFactory.MyLocationPoint.then(function(point) {
+                console.log(point);
+                MapFactory.GetMyAddressPromise(point.latitude,point.longitude).then(function(results){
+                    console.log(results);
+                    scope.startPoint = results.results[1].formatted_address;
+                    scope.map.markers.push({latitude: point.latitude, longitude: point.longitude});
+                    scope.map.control.refresh({latitude: point.latitude, longitude: point.longitude});
+                    scope.map.control.getGMap().setZoom(14);
+
+
+                })
+            });
+        };
 
 
         var directionsDisplay;
         directionsDisplay = new google.maps.DirectionsRenderer();
-//TODO: not in use
-//        function clearMap() {
-//            if (directionsDisplay) {
-//                console.log(directionsDisplay.maps)
-//                directionsDisplay.setMap(null);
-//            }
-//        }
-
         function initialize() {
             //TODO: check if old map distroys clear directions
             var myGMap = scope.map.control.getGMap();
             directionsDisplay.setMap(myGMap);
         }
-
         scope.calculateRoute = function () {
-            var startPoint = scope.startPoint || "";
-            var destPoint = scope.destPoint || ""
+            var startPoint = scope.startPoint||"";
+            var destPoint = scope.destPoint || "";
+
             var directionsService = new google.maps.DirectionsService();
             function createRoute(firstPoint, secondPoint) {
                 var request = {
@@ -44,9 +56,10 @@
                     destination: secondPoint,
                     travelMode: google.maps.TravelMode.DRIVING,
                     unitSystem: google.maps.UnitSystem.METRIC
-                }
+                };
                 directionsService.route(request, function (response, status) {
                     if (status == google.maps.DirectionsStatus.OK) {
+                        scope.map.markers=[];
                         directionsDisplay.setDirections(response);
                         //show travel distance
                         var  routeDistance = 0;

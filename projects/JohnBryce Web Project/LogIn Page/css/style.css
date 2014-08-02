@@ -1,0 +1,14 @@
+.login
+{
+    padding-top: 20px;
+    width:350px;
+}
+.login-buttons{
+	padding-top:20%;
+}
+.button, .table{
+    margin-top: 20px;
+}
+.alert{
+    color: red;
+}
