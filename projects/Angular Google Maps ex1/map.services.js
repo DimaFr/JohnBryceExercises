@@ -11,6 +11,7 @@
 //get LatLng from dropped marker
 //calculate route,return distance in km
     function mapFactory(q) {
+        console.log("MapFactory is loaded");
         var myLocationPoint = getMyLocation();
 
 

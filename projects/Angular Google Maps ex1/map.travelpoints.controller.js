@@ -5,13 +5,19 @@
 
 
     angular.module('myMap')
-        .controller({"TravelPointsController": ["$scope", travelPointsController]})
+        .controller({"TravelPointsController": ['$scope', travelPointsController]})
 
     function travelPointsController(scope) {
-        console.log("This is TravelPointsController");
+        console.log("TravelPointsController is loaded");
         //TODO: remove before release - hardcoded points
         scope.startPoint = "Paris";
         scope.destPoint = "Dakar";
+//        var startPoint = scope.startPoint;
+//        var destPoint = scope.destPoint;
+//        scope.calculateRoute = MapDirectionsFactory.CalculateRoute(startPoint,destPoint);
+//        = MapDirectionsFactory.RouteDistance;
+
+
         var directionsDisplay;
         directionsDisplay = new google.maps.DirectionsRenderer();
 //TODO: not in use
@@ -43,7 +49,9 @@
                     if (status == google.maps.DirectionsStatus.OK) {
                         directionsDisplay.setDirections(response);
                         //show travel distance
-                        scope.distance = response.routes[0].legs[0].distance.value / 1000;
+                        var  routeDistance = 0;
+                        routeDistance = response.routes[0].legs[0].distance.value;
+                        scope.distance = routeDistance/1000;
                         console.log("Distance: " + response.routes[0].legs[0].distance.value)
                     } else {
                         console.log(status)

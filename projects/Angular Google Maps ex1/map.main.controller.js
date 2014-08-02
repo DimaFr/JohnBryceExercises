@@ -6,6 +6,7 @@
         .controller({'MapController': ['$scope', 'MapFactory', mapController]})
 
     function mapController(scope, MapFactory) {
+        console.log("MapController is loaded");
         //TODO: add alert if geolocation is not supported by browser
         if ("geolocation" in navigator) {
             /* geolocation is available */
