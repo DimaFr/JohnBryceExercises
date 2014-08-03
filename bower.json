@@ -15,7 +15,7 @@
     "tests"
   ],
   "dependencies": {
-    "angular-google-maps": "~1.1.13"
-
+    "angular-google-maps": "~1.1.13",
+    "angular-route": "~1.2.21"
   }
 }

@@ -1,0 +1,17 @@
+<div ng-controller="HelloUserController as helloCtrl">
+    <div class="col-xs-6 col-xs-offset-3">
+        <div class="page-header">
+            <h1>Hello {{helloCtrl.user.username}}</h1>
+        </div>
+
+        <button ng-show="helloCtrl.user.admin" ng-click="showUsers=!showUsers" type="button" class="btn btn-default">Show Users</button>
+
+            <table ng-show="showUsers" class="table table-striped">
+                <tr ng-repeat="user in helloCtrl.users">
+                    <td>{{user.username}}</td>
+                    <td>{{user.email}}</td>
+                </tr>
+            </table>
+
+    </div>
+</div>

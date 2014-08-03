@@ -11,6 +11,8 @@
         console.log("TravelPointsController is loaded");
         //TODO:  before release - hardcoded points,add default points if no current location
 
+        var currentGMap;
+
        MapFactory.MyLocationPoint.then(function(point) {
            console.log(point);
            MapFactory.GetMyAddressPromise(point.latitude,point.longitude).then(function(results){
@@ -30,8 +32,8 @@
                     scope.startPoint = results.results[1].formatted_address;
                     scope.map.markers.push({latitude: point.latitude, longitude: point.longitude});
                     scope.map.control.refresh({latitude: point.latitude, longitude: point.longitude});
-                    scope.map.control.getGMap().setZoom(14);
-
+//                  scope.map.control.getGMap().setZoom(14);
+                    currentGMap.setZoom(14);
 
                 })
             });
@@ -42,8 +44,9 @@
         directionsDisplay = new google.maps.DirectionsRenderer();
         function initialize() {
             //TODO: check if old map distroys clear directions
-            var myGMap = scope.map.control.getGMap();
-            directionsDisplay.setMap(myGMap);
+            currentGMap= scope.map.control.getGMap();
+            directionsDisplay.setMap(currentGMap);
+
         }
         scope.calculateRoute = function () {
             var startPoint = scope.startPoint||"";

@@ -23,19 +23,15 @@
         pointPromise.then(function (latLng) {
             console.log("latitude: " + latLng.latitude + "\n" +
                 "longitude: " + latLng.longitude);
-            //load my location
+            //load my location CREATE A GMAP
             scope.map=MapFactory.NewMap(latLng);
-
-
             console.log(scope.map);
-
             scope.loadMap = true;
             console.log('map should init')
         }, function (msg) {
             console.log("Failed: to resolve promise" + msg);
             //load default location
             scope.map=MapFactory.NewMap();
-
             scope.loadMap = true;
         })
     }
