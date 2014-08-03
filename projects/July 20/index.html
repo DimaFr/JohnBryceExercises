@@ -14,13 +14,23 @@
     <div class="container">
         <a href="#" class="navbar-brand"><b>Some Bold Text with Link</b></a>
         <!--button to expand collapsable bar-->
-        <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+        <button class="navbar-toggle" data-toggle="collapse" data-target="#navHeaderCollapse">
             <!--instead of some icon-->
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
-
         </button>
+        <!--list of collapsable elements-->
+        <div class="collapse navbar-collapse" id="navHeaderCollapse">
+            <ul class="navbar navbar-nav">
+                <li>demo</li>
+                <li>demo</li>
+                <li>demo</li>
+            </ul>
+
+
+
+        </div>
         <!--collapse when resolution is small-->
         <div class="collapse navbar-collapse navHeaderCollapse">
             <ul class="nav navbar-nav navbar-right">
