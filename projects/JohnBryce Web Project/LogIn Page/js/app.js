@@ -33,7 +33,7 @@
     app.controller("StartPageController", function ($location) {
         this.goToSignUp = function () {
             $location.path("/SignUp");
-        }
+        };
         this.goToSignIn = function () {
             $location.path("/SignIn");
         }
