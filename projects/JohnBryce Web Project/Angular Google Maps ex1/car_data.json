@@ -1,6 +1,6 @@
 //http://www.discountcar.com/our_fleet.cfm"
 {
-    "cars: [
+    "cars": [
         {
             "Model": "Mazda 2",
             "Storage Capacity": 13.3,
