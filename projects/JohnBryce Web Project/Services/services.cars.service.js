@@ -2,47 +2,46 @@
  * Created by admin on 8/3/14.
  */
 (function (window, angular) {
+    'use strict';
     angular.module('homePage')
-        .factory({'CarsFactory': ["$http", "$q", carsFactory]})
+        .factory({'CarsFactory': ["$http", "$q", carsFactory]});
 
     function carsFactory(http, q) {
+        var CarsFactory = function(){};
+        var _cars;
 
-
-        function getCarById(cars, plateId) {
+        CarsFactory.getCarById=function(plateId){
             var myCar;
-            for (var i = 0; i < cars.length; i++) {
-                if (cars[i].plateId == plateId) {
-                    myCar = cars[i];
-                    console.log(myCar);
-                    break;
-                }
-                return myCar;
+            if(_cars) {
+                for (var i = 0; i < _cars.length; i++) {
+                    if (_cars[i].plateId == plateId) {
+                        myCar = _cars[i];
+
+                        return myCar;
+                        break;
+                    }
+                   }
+            }
+            else{
+                this.getCarsData().then(function(response){
+                    this.getCarsById(plateId);
+                })
             }
         };
-
-        function getCarsPromise() {
-            var defer = q.defer();
+        CarsFactory.getCarsData=function(){
             var jsonUrlString = '../cardata.json';
-
-            http.get(jsonUrlString)
-                .success(function (response) {
-                    defer.resolve(response);
-                    console.log(response);
+            return http.get(jsonUrlString)
+                .then(function (response) {
+                    _cars=response.data.cars;
+                    return _cars;
                 })
-                .error(function (response) {
-                    defer.reject(response);
-                    console.log("Error")
+                .catch(function (error) {
+                    console.log("Error: "+error.status)
                 })
-            return defer.promise;
+
         };
-
-        var carsFactory = {
-            GetCarsPromise: getCarsPromise(),
-            GetCarById: getCarById
-        };
-
-
-        return {"CarsFactory": carsFactory};
+        CarsFactory.getCarsData();
+        return CarsFactory;
     }
 
 
