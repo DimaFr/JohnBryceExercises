@@ -3,37 +3,40 @@
  */
 (function (window, angular) {
     angular.module('homePage')
-        .controller({'HomeMainContainerController': ['$http', 'CarsFactory', mainContainerController]})
+        .controller({'HomeMainContainerController': ['$scope', 'CarsFactory', mainContainerController]})
 
-    function mainContainerController(http, CarsFactory) {
+    function mainContainerController(scope, CarsFactory) {
+        scope.showImage = false;
+        scope.offer = {};
+        scope.offer.msg = "Here goes template with some car class. Lorem ipsum dolor" +
+            " sit amet, consectetur adipisicing elit. A" + "liquid amet commodi delectus"+
+        "  Lorem ipsum dolor sit amet, consectetur adipisicing elit." +
+        " A aliquid amet commodi delectus doloremque dolorum ducimus explicabo" +
+        " facere, hic illo laboriosam libero nesciunt nobis omnis repellendus" +
+        " sapiente voluptatum. Dolorum, fugia";
+        scope.offer.mainMsg = "New 2014 design, the little five-door hatchback is fun to toss around and" +
+            " has a clean if modestly equipped cabin. Now at 20% off." +
+            " doloremque dolorum ducimus explicabo facere, hic illo laboriosam libero" +
+            " nesciunt nobis omnis repellendus sapiente voluptatum. Dolorum, fugiat!";
+
+        CarsFactory.getCarsData().then(function (data) {
+
+            scope.car = CarsFactory.getCarById(1111111);
+            console.log(scope.car);
+            scope.carImagePath = "../resources/Cars/" + scope.car.mediumImage;
+            scope.showImage = true;
+
+        });
 
 
-             this.hireNowBtnClicked = function () {
+        this.bookNowBtnClicked = function () {
+            CarsFactory.getCarsData().then(function (data) {
 
-
-            CarsFactory.GetCarsPromise.then(function(data){
-                var cars = data;
-                console.log(data);
             });
-
-
-
-//            var cars = CarsFactory.CarsArray;
-//            console.log(cars);
-//            var cars = {};
-//            var jsonUrlString = '../cardata.json';
-//            http.get(jsonUrlString)
-//                .success(function (response) {
-//                    console.log(response.cars);
-//                })
-//                .error(function (data) {
-//                    console.log(data);
-//
-//                })
-
+            var myCar = CarsFactory.getCarById(1111111);
+            console.log(myCar);
 
         }
-
 
     }
 

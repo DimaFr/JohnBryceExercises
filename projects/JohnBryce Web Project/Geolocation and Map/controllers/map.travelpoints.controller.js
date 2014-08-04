@@ -62,6 +62,7 @@
                 };
                 directionsService.route(request, function (response, status) {
                     if (status == google.maps.DirectionsStatus.OK) {
+                        //remove all previous markers
                         scope.map.markers=[];
                         directionsDisplay.setDirections(response);
                         //show travel distance
