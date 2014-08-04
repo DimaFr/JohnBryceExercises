@@ -1,0 +1,146 @@
+{
+    "cars": [
+        {
+            "Model": "Mazda 2",
+            "plateId":1111111,
+            "Storage Capacity": 13.3,
+            "Class": "economy",
+            "Fuel Economy": "6.0L/100km",
+            "People": 3,
+            "Big Case": 1,
+            "Small Case": 2,
+            "Medium Image": "mazda2-med-car4.png"
+        },
+        {
+            "Model": "Toyota Yaris",
+            "plateId":2222222,
+            "Storage Capacity": 12.8,
+            "Class": "compact",
+            "Fuel Economy": "4.9L/100km",
+            "People": 4,
+            "Big Case": 1,
+            "Small Case": 2,
+            "Medium Image": "ToyotaYaris-med-car5.png"
+        },
+        {
+            "Model": "Kia Rio",
+            "Storage Capacity": 14.8,
+            "Class": "intermediate",
+            "Fuel Economy": "6.5L/100km",
+            "People": 5,
+            "Big Case": 12,
+            "Small Case": 2,
+            "Medium Image": "KiaRio_med-car16.png"
+        },
+        {
+            "Model": "Hyundai Elantra",
+            "plateId":3333333,
+            "Storage Capacity": 13.8,
+            "Class": "standard size",
+            "Fuel Economy": "5.8L/100km",
+            "People": 5,
+            "Big Case": 2,
+            "Small Case": 2,
+            "Medium Image": "HyundaiElantra-med-car2.png"
+        },
+        {
+            "Model": "Kia Optima",
+            "Storage Capacity": 16.6,
+            "Class": "full size",
+            "Fuel Economy": "6.7L/100km",
+            "People": 5,
+            "Big Case": 2,
+            "Small Case": 3,
+            "Medium Image": "KiaOptima-med-car10.png"
+        },
+        {
+            "Model": "Dodge Grand Caravan",
+            "plateId":3333333,
+            "Storage Capacity": 33.0,
+            "Class": "Mini Van",
+            "Fuel Economy": "7.9L/100km",
+            "People": 7,
+            "Big Case": 4,
+            "Small Case": 3,
+            "Medium Image": "MiniVan-med-car18.png"
+        },
+        {
+            "Model": "Chrysler 300",
+            "plateId":3333333,
+            "Storage Capacity": 15.0,
+            "Class": "Premium",
+            "Fuel Economy": "5.9L/100km",
+            "People": 5,
+            "Big Case": 2,
+            "Small Case": 1,
+            "Medium Image": "MiniVan-med-car18.png"
+        },
+        {
+            "Model": "Chrysler 300",
+            "plateId":3333333,
+            "Storage Capacity": 15.0,
+            "Class": "Premium",
+            "Fuel Economy": "5.9L/100km",
+            "People": 5,
+            "Big Case": 2,
+            "Small Case": 1,
+            "Medium Image": "Chrysler300-med-car1.png"
+        },
+        {
+            "Model": "Cadillac CTS",
+            "plateId":3333333,
+            "Storage Capacity": 13.6,
+            "Class": "Luxury",
+            "Fuel Economy": "7.2L/100km",
+            "People": 5,
+            "Big Case": 1,
+            "Small Case": 2,
+            "Medium Image": "CadillacCTS-med-car19.png"
+        },
+        {
+            "Model": "BMW 3 Series",
+            "plateId":3333333,
+            "Storage Capacity": "",
+            "Class": "Diamond ",
+            "Fuel Economy": "6.5L/100km",
+            "People": 5,
+            "Big Case": 2,
+            "Small Case": 4,
+            "Medium Image": "BMW3Series-med-car20.png"
+        },
+        {
+            "Model": "Ford Explorer",
+            "plateId":3333333,
+            "Storage Capacity": "37.0",
+            "Class": "Standard SUV ",
+            "Fuel Economy": "7.4L/100km",
+            "People": 5,
+            "Big Case": 3,
+            "Small Case": 3,
+            "Medium Image": "FordExplorer -med-car15.png"
+        },
+        {
+            "Model": "GMC Yukon",
+            "plateId":3333333,
+            "Storage Capacity": "16.9",
+            "Class": "Large SUV",
+            "Fuel Economy": "9.5L/100km",
+            "People": 7,
+            "Big Case": 3,
+            "Small Case": 3,
+            "Medium Image": "GMCYukon-med-car13.png"
+        },
+        {
+            "Model": "Ford F150",
+            "plateId":3333333,
+            "Storage Capacity": "Various box sizes available - up to 8 feet. 3/4 ton and 1 ton pick up trucks also avaialble.",
+            "Class": "Pick-Up Truck",
+            "Fuel Economy": "11.3L/100km",
+            "People": 5,
+            "Big Case": "",
+            "Small Case": "",
+            "Medium Image": "FordF150-med-car17.png"
+        }
+
+    ]
+}

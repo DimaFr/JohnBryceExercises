@@ -12,6 +12,8 @@
     <script src="home.module.js"></script>
     <script src="controllers/home.footer.controller.js"></script>
     <script src="controllers/home.header.controller.js"></script>
+    <script src="controllers/home.mainContainer.controller.js"></script>
+    <script src="../Services/services.cars.service.js"></script>
 </head>
 <body>
 <!--HEADER-->
@@ -39,20 +41,33 @@
                 <li><a href="#"><b>Book a car</b></a></li>
                 <li><a href="#"><b>Return a car</b></a></li>
             </ul>
-                <button class="btn btn-success navbar-btn navbar-right">{{homeHeaderCtrl.logBtnTitle}}</button>
-
+            <button class="btn btn-success navbar-btn navbar-right">{{homeHeaderCtrl.logBtnTitle}}</button>
         </div>
-
-
     </div>
 </div>
 <!--Main CONTENT-->
+<div class="container" role="main" ng-controller="HomeMainContainerController as HomeMainCtrl">
+    <div class="jumbotron">
+        <h1>Special offer.</h1>
 
+        <p>Here goes template with some car class. Lorem ipsum dolor sit amet, consectetur adipisicing elit. A
+            aliquid
+            amet commodi delectus doloremque dolorum ducimus explicabo facere, hic illo laboriosam libero nesciunt nobis
+            omnis repellendus sapiente voluptatum. Dolorum, fugiat!</p>
+
+        <p>
+            <button class="btn btn-info" ng-click="HomeMainCtrl.hireNowBtnClicked()">Hire now...</button>
+        </p>
+    </div>
+
+
+</div>
 <!--FOOTER-->
 <div class="navbar navbar-default navbar-fixed-bottom" ng-controller="HomeFooterController as homeFooterCtrl">
     <div class="container">
 
-        <p class="navbar-text navbar-left">&copy{{homeFooterCtrl.copyrightYear}} The DMF Car Rent - All rights Reserved.</p>
+        <p class="navbar-text navbar-left">&copy{{homeFooterCtrl.copyrightYear}} The DMF Car Rent - All rights
+            Reserved.</p>
 
     </div>
 </div>
