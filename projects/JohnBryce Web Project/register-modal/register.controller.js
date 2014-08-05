@@ -7,28 +7,24 @@
 
     function registerController(scope, modalInstance) {
 
-//    scope.users = DataService.RestoreState();
-//    // this.user = {};
-//    scope.signupUser = function () {
-//        //TODO: valid entry check, duplicate check
-//        if (scope.user) {
-//            scope.users.push(scope.user);
-//            DataService.SaveState(scope.users);
-//            DataService.SaveCurrentUser(scope.user);
-//            scope.user = {};
-//            //move to other page
-//            $location.path("/HelloUser");
-//        }
-//        //TODO: separate to directive or service
-//        scope.isConfirmPsw = function () {
-//            if(scope.user.password!==scope.user.confirmPsw){
-//
-//
+//        this.users = DataService.RestoreState();
+//        // this.passwordsMatch = true;
+//        // this.user = {};
+//        this.signupUser = function () {
+//            //TODO: valid entry check, duplicate users check
+//            var passwordsMatch = true;
+//            if (this.user.password != this.user.confirmPsw) {
+//                passwordsMatch = false;
 //            }
-//
+//            if (this.user && passwordsMatch) {
+//                this.users.push(this.user);
+//                DataService.SaveState(this.users);
+//                DataService.SaveCurrentUser(this.user);
+//                this.user = {};
+//                //move to other page
+//                $location.path("/HelloUser");
+//            }
 //        }
-//
-//    }
 
         scope.signUpUser = function () {
             console.log('signUpUser clicked');

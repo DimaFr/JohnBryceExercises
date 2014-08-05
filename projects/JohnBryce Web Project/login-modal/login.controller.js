@@ -7,17 +7,26 @@
 
     function signInController(scope,modalInstance) {
       //  DataService, AuthService, $location
-//        scope.users = DataService.RestoreState();
+//        this.users = DataService.RestoreState();
+//        //actually this is credentials
+//        this.user = {};
 //
-//        scope.user = {};
+//        this.showSignInFail = false;
 //
-//        scope.signInUser = function () {
-//            AuthService.DoSmth();
-//            AuthService.LoginSuccess(this.user);
-//            DataService.SaveCurrentUser(this.user);
-//            //move to other page
-//            $location.path("/HelloUser");
-//        }
+//        this.signInUser = function () {
+//
+//            var success = AuthService.LoginSuccess(this.user);
+//
+//            if (!success.Success) {
+//                console.log("Username or password is invalid.Please try again.");
+//                this.showSignInFail = true;
+//            } else {
+//                // set current user
+//                DataService.SaveCurrentUser(success.WithUser);
+//                this.showSignInFail = false;
+//                $location.path("/HelloUser");
+//            }
+//        };
         scope.signInUser = function () {
             console.log('signinUser clicked');
             //todo: Q defer - authenticate
