@@ -39,21 +39,21 @@
             function openRegisterModal(){
 //todo: create register template
                 var modalInstance =modal.open({
-                    templateUrl:'login-modal/login.html',
-                    controller:'SignInController',
+                    templateUrl:'register-modal/register.html',
+                    controller:'RegisterController',
                     size:'sm'
                 })
                 modalInstance.result.then(function(result){
                     if(result.user=="login")
                     {
-                        log.debug(result.user);
+                        log.debug("2: "+result.user);
                     }
                     if(result.user=="register")
                     {
-                        log.debug(result.user);
+                        log.debug("2: "+result.user);
                     }
                 }, function(msg){
-                    log.info("Modal dismissed with data: "+msg+" at: "+ new Date());
+                    log.info("2: Modal dismissed with data: "+msg+" at: "+ new Date());
                 });
 
 
