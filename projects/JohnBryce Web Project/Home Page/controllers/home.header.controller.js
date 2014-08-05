@@ -7,7 +7,7 @@
 
     function headerController(modal,log){
         var timeStamp = new Date().getTime();
-        console.log(timeStamp+"header comtroller loaded")
+        console.log(timeStamp+"header controller loaded")
        var userLogged = false;
 
        this.logBtnTitle = userLogged ? "Log Out" :"Register/Login";
@@ -19,6 +19,7 @@
            var modalInstance =modal.open({
                templateUrl:'login-modal/login.html',
                controller:'SignInController',
+               resolve: function(){},
                size:'sm'
            })
 
@@ -38,6 +39,7 @@
 
             function openRegisterModal(){
 //todo: create register template
+
                 var modalInstance =modal.open({
                     templateUrl:'register-modal/register.html',
                     controller:'RegisterController',

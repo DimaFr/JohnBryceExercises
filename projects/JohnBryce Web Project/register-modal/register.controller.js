@@ -3,36 +3,37 @@
  */
 (function (window, angular) {
     angular.module('carRentApp')
-        .controller({'RegisterController': ['$scope', '$modalInstance', registerController]})
-
-    function registerController(scope, modalInstance) {
-
-//        this.users = DataService.RestoreState();
-//        // this.passwordsMatch = true;
-//        // this.user = {};
-//        this.signupUser = function () {
-//            //TODO: valid entry check, duplicate users check
-//            var passwordsMatch = true;
-//            if (this.user.password != this.user.confirmPsw) {
-//                passwordsMatch = false;
-//            }
-//            if (this.user && passwordsMatch) {
-//                this.users.push(this.user);
-//                DataService.SaveState(this.users);
-//                DataService.SaveCurrentUser(this.user);
-//                this.user = {};
-//                //move to other page
-//                $location.path("/HelloUser");
-//            }
-//        }
-
+        .controller({'RegisterController': ['$scope', '$modalInstance','DataService', registerController]})
+//TODO: add: ,
+    function registerController(scope, modalInstance,DataService) {
+        console.log("register controller loaded");
+        var users= DataService.RestoreState();
+        scope.passwordsMatch = true;
+        scope.user = {};
         scope.signUpUser = function () {
             console.log('signUpUser clicked');
-            //modalInstance.close({user: "new"})
+            //TODO: valid entry check, duplicate users check
+            var passwordsMatch = true;
+            if (scope.user.password != scope.user.confirmPsw) {
+                passwordsMatch = false;
+            }
+            if (scope.user && passwordsMatch) {
+                users.push(scope.user);
+                DataService.SaveState(users);
+                DataService.SaveCurrentUser(scope.user);
+                scope.user = {};
+                //move to other page
+                //$location.path("/HelloUser");
+            }
         }
+
+//        scope.signUpUser = function () {
+//            console.log('signUpUser clicked');
+//            //modalInstance.close({user: "new"})
+//        }
         scope.cancel = function () {
             console.log("cancel 2 clicked");
-            //modalInstance.dismiss('cancel');
+            modalInstance.dismiss('cancel');
         }
 
 
