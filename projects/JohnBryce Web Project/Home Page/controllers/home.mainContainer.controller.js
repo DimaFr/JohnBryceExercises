@@ -2,10 +2,13 @@
  * Created by admin on 8/3/14.
  */
 (function (window, angular) {
-    angular.module('homePage')
+    angular.module('carRentApp')
         .controller({'HomeMainContainerController': ['$scope', 'CarsFactory', mainContainerController]})
 
     function mainContainerController(scope, CarsFactory) {
+        var timeStamp = new Date().getTime();
+        console.log(timeStamp+"container comtroller loaded")
+
         scope.showImage = false;
         scope.offer = {};
         scope.offer.msg = "Here goes template with some car class. Lorem ipsum dolor" +
@@ -23,7 +26,7 @@
 
             scope.car = CarsFactory.getCarById(1111111);
             console.log(scope.car);
-            scope.carImagePath = "../resources/Cars/" + scope.car.mediumImage;
+            scope.carImagePath = "resources/Cars/" + scope.car.mediumImage;
             scope.showImage = true;
 
         });

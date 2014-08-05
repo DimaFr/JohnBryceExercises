@@ -3,10 +3,13 @@
  */
 (function (window, angular) {
     'use strict';
-    angular.module('homePage')
+    angular.module('carRentApp')
         .factory({'CarsFactory': ["$http", "$q", carsFactory]});
 
     function carsFactory(http, q) {
+
+        var timeStamp = new Date().getTime();
+        console.log(timeStamp+"car factory loaded")
         var CarsFactory = function(){};
         var _cars;
 
@@ -29,7 +32,7 @@
             }
         };
         CarsFactory.getCarsData=function(){
-            var jsonUrlString = '../cardata.json';
+            var jsonUrlString = 'data/cardata.json';
             return http.get(jsonUrlString)
                 .then(function (response) {
                     _cars=response.data.cars;
