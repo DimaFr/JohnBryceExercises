@@ -1,0 +1,31 @@
+<div class="container">
+    <table class="table">
+        <tr ng-repeat="car in cars">
+            <td><div class="center-block"><img src="resources/Cars/{{car.mediumImage}}"></div></td>
+            <td><p>{{car.class.toUpperCase()}}</p></td>
+            <td class="col-md-4">
+                <ul>
+                    <li><h4><b>{{car.model}} </b><br/><small>or similar</small></h4></li>
+                    <li>Storage Capacity: {{car.storageCapacity}}</li>
+                    <li>People: {{car.people}}</li>
+                    <li>Fuel Economy: {{car.fuelEconomy}}</li>
+                    <li><br/></li>
+                    <li><button class="btn btn-sm btn-primary ">Rent Now</button></li>
+                </ul>
+            </td>
+        </tr>
+
+    </table>
+</div>
+<style>
+    .center-block{
+        text-align: center;
+    }
+    table{
+        background-color: rgb(238, 238, 238);
+    }
+    ul
+    {
+        list-style-type: none;
+    }
+</style>

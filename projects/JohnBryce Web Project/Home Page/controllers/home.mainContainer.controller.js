@@ -26,7 +26,7 @@
 
             scope.car = CarsFactory.getCarById(1111111);
             console.log(scope.car);
-            scope.carImagePath = "resources/Cars/" + scope.car.mediumImage;
+            scope.car.ImagePath = "resources/Cars/" + scope.car.mediumImage;
             scope.showImage = true;
 
         });

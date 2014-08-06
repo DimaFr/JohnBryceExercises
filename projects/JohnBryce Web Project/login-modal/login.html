@@ -2,18 +2,19 @@
     <div class="modal-header">
         <h3 class="modal-title">Sign In</h3>
     </div>
+
     <div class="modal-body">
         <!--<div class="login container">-->
 
         <form role="form">
             <div class="form-group">
                 <label for="usernameLbl">Username:</label>
-                <input ng-model="user.username" type="text" class="form-control" placeholder="Username..."/>
+                <input ng-model="user.username" type="text" class="form-control" placeholder="Username..." required/>
             </div>
             <div class="form-group">
                 <label for="passwordLbl">Password:</label>
                 <input ng-model="user.password" type="password" class="form-control"
-                       placeholder="Enter password..."/>
+                       placeholder="Enter password..." required/>
             </div>
             <button type="submit" class="btn btn-success" ng-click="signInUser()">Sign In</button>
             <div class="alert alert-warning" ng-show="showSignInFail">
@@ -21,7 +22,9 @@
             </div>
         </form>
     </div>
+
     <div class="modal-footer">
-        <button  class="btn btn-primary pull-left" ng-click="createAccountBtn()">Create an account</button>
+        <button class="btn btn-primary pull-left" ng-click="createAccountBtn()">Create an account</button>
         <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
     </div>
+

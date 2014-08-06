@@ -17,13 +17,14 @@
             if (scope.user.password != scope.user.confirmPsw) {
                 passwordsMatch = false;
             }
-            if (scope.user && passwordsMatch) {
+            if (scope.user.email && scope.user.username && scope.user.password  && (scope.user.password = scope.user.confirmPsw)) {
                 users.push(scope.user);
                 DataService.SaveState(users);
                 DataService.SaveCurrentUser(scope.user);
-                scope.user = {};
+                //scope.user = {};
                 //move to other page
                 //$location.path("/HelloUser");
+                modalInstance.close(scope.user)
             }
         }
 

@@ -29,8 +29,11 @@
 //        };
         scope.signInUser = function () {
             console.log('signinUser clicked');
+
+            if(scope.user && scope.password){
             //todo: Q defer - authenticate
-            modalInstance.close({user:"login"})
+                modalInstance.close({user: "login"})
+            }
         }
         scope.createAccountBtn = function(){
             console.log('createAccoutBtn clicked');

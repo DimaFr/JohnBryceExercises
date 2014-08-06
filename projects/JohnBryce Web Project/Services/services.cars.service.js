@@ -70,6 +70,7 @@
                         return myCar;
                         break;
                     }
+
                 }
             }
             else {
@@ -77,6 +78,7 @@
                     this.getCarsById(plateId);
                 })
             }
+            return myCar;
         };
         CarsFactory.getCarsData = function () {
             var jsonUrlString = 'data/cardata.json';

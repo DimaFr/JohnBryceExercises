@@ -64,17 +64,7 @@
             "smallLuggage": 3,
             "mediumImage": "MiniVan-med-car18.png"
         },
-        {
-            "model": "Chrysler 300",
-            "plateId":3333333,
-            "storageCapacity": 15.0,
-            "class": "Premium",
-            "fuelEconomy": "5.9L/100km",
-            "people": 5,
-            "bigLuggage": 2,
-            "smallLuggage": 1,
-            "mediumImage": "MiniVan-med-car18.png"
-        },
+
         {
             "model": "Chrysler 300",
             "plateId":3333333,

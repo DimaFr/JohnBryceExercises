@@ -10,8 +10,10 @@
 
                     controller:'HomeMainController'
 
-
-
+                })
+                .when('/cars',{
+                    templateUrl:'Cars-Page/cars.html',
+                    controller:'CarsTableController'
                 })
         })
 
