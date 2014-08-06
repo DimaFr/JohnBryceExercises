@@ -56,10 +56,9 @@
             <div class="collapse navbar-collapse navbar-right" id="navHeaderCollapse">
                 <ul class="nav navbar-nav">
                     <li ng-class="{active:isActive('/')}"><a href="#/about"><b>About</b></a></li>
-                    <li ng-class="{active:isActive('/cars')}"><a ui-sref="cars"><b>Our cars</b></a></li>
+                    <li ng-class="{active:isActive('/cars')}"><a href="#/cars"><b>Our cars</b></a></li>
                     <li ng-class="{active:isActive('/book')}"><a href="#/book"><b>Book a car</b></a></li>
-                    <li ng-class="{active:isActive('/return')}"
-                    "><a href="#/return"><b>Return a car</b></a></li>
+                    <li ng-class="{active:isActive('/return')}"><a href="#/return"><b>Return a car</b></a></li>
                 </ul>
                 <button class="btn btn-success navbar-btn navbar-right" ng-click="homeHeaderCtrl.logInBtnClicked()">
                     {{homeHeaderCtrl.logBtnTitle}}
