@@ -3,7 +3,7 @@
  */
 (function (window, angular) {
 
-    angular.module('myMap')
+    angular.module('carRentApp')
         .factory({'MapFactory': ["$q", mapFactory]});
 
 //get current LatLng point

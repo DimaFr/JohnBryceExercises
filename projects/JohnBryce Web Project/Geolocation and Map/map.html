@@ -1,30 +1,5 @@
-<!DOCTYPE html>
-<html ng-app="myMap">
-<head lang="en">
-    <meta charset="UTF-8">
-    <title>Map</title>
 
-    <link rel="stylesheet" href="css/style.css"/>
-    <link rel="stylesheet" href="../../../components/bootstrap/dist/css/bootstrap.min.css"/>
-    <!--<script src="http://maps.google.com/maps/api/js?sensor=false"></script>-->
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
-    <script src="../../../components/angular/angular.js"></script>
-    <!--<script src="../../components/ui-bootstrap-tpls-0.11.0.js"></script>-->
-    <!--<script src="https://maps.googleapis.com/maps/api/js?v=3&sensor=true"></script>-->
-    <!--<script src='//maps.googleapis.com/maps/api/js?sensor=false'></script>-->
-    <script src="../../../components/lodash/dist/lodash.underscore.js"></script>
-    <script src="../../../components/angular-google-maps/dist/angular-google-maps.js"></script>
-
-
-    <script src="controllers/map.main.controller.js"></script>
-    <script src="controllers/map.travelpoints.controller.js"></script>
-    <script src="services/map.services.js"></script>
-    <!--<script src="map.directions.service.js"></script>-->
-</head>
-<body>
 <div class="container"><h2>Angular-Google-Maps</h2></div>
-<div ng-controller="MapController">
-
     <div class="container myMap">
         <div class="row">
             <div class="col-sm-12">
@@ -35,7 +10,6 @@
             </div>
         </div>
     </div>
-
 
     <div class="container" ng-controller="TravelPointsController">
 
@@ -79,8 +53,11 @@
     </div>
         </div>
 
-    </div>
+    <!--</div>-->
 </div>
 
-</body>
-</html>
+<style>
+    .angular-google-map-container {
+        height: 400px;
+    }
+</style>

@@ -3,11 +3,13 @@
  */
 (function (window, angular) {
     angular.module('carRentApp')
-        .controller({'HomeHeaderController': ['$modal', '$log', '$location',headerController]})
+        .controller({'HomeHeaderController': ['$modal', '$log', '$location', headerController]})
 
     function headerController(modal, log, location) {
+//highlight the relevant "btn" than page open
         this.isActive = function (viewLocation) {
-            return viewLocation === $location.path();
+            var path = location.$$path;
+            return viewLocation === path;
         };
 
         var timeStamp = new Date().getTime();
@@ -58,10 +60,7 @@
                 }, function (msg) {
                     log.info("2: Modal dismissed with data: " + msg + " at: " + new Date());
                 });
-
-
             }
-
         }
     }
 

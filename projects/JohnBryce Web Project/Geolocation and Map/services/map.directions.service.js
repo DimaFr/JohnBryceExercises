@@ -1,10 +1,10 @@
 /**
  * Created by admin on 8/1/14.
  */
-(function () {
+(function (window,angular) {
 
 
-    angular.module('myMap')
+    angular.module('carRentApp')
         .factory({'MapDirectionsFactory': ["$scope", mapDirectionsFactory]});
 
     function mapDirectionsFactory(scope) {
@@ -53,4 +53,4 @@
         return MapDirectionsFactory;
     }
 
-})();
+})(window,angular);

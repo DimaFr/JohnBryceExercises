@@ -2,7 +2,8 @@
  * Created by admin on 7/27/14.
  */
 (function (window, angular) {
-    angular.module('myMap', ['google-maps'])
+
+    angular.module('carRentApp')
         .controller({'MapController': ['$scope', 'MapFactory', mapController]});
 
     function mapController(scope, MapFactory) {

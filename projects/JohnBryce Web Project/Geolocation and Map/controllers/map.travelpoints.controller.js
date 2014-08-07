@@ -4,7 +4,7 @@
 (function (window, angular) {
 
 
-    angular.module('myMap')
+    angular.module('carRentApp')
         .controller({"TravelPointsController": ['$scope','MapFactory',travelPointsController]});
 
     function travelPointsController(scope,MapFactory) {
@@ -22,8 +22,6 @@
            })
        });
 
-
-
         scope.goToMyLocation=function(){
             MapFactory.MyLocationPoint.then(function(point) {
                 console.log(point);
@@ -38,7 +36,6 @@
                 })
             });
         };
-
 
         var directionsDisplay;
         directionsDisplay = new google.maps.DirectionsRenderer();
