@@ -1,23 +1,4 @@
-<!--<!DOCTYPE html>-->
-<!--<html ng-app="carRentApp">-->
-<!--<head lang="en">-->
-<!--<meta charset="UTF-8">-->
-<!--<title>Home DMF Rent </title>-->
-<!--<link rel="stylesheet" href="../../../components/bootstrap/dist/css/bootstrap.min.css"/>-->
-<!--<link rel="stylesheet" href="css/home.page.css"/>-->
-<!--<script src="../../../components/jquery/dist/jquery.js"></script>-->
 
-<!--<script src="../../../components/bootstrap/dist/js/bootstrap.min.js"></script>-->
-<!--<script src="../../../components/angular/angular.js"></script>-->
-
-<!--<script src="../app.js"></script>-->
-<!--<script src="controllers/home.footer.controller.js"></script>-->
-<!--<script src="controllers/home.header.controller.js"></script>-->
-<!--<script src="controllers/home.mainContainer.controller.js"></script>-->
-<!--<script src="../Services/services.cars.service.js"></script>-->
-<!--</head>-->
-<!--<body>-->
-<!--HEADER-->
 
 <div ng-controller="HomeMainController">
 
@@ -44,9 +25,12 @@
                     <li ng-class="{active:isActive('/')}"><a href="#/about"><b>About</b></a></li>
                     <li ng-class="{active:isActive('/cars')}"><a href="#/cars"><b>Our cars</b></a></li>
                     <li ng-class="{active:isActive('/book')}"><a href="#/book"><b>Book a car</b></a></li>
-                    <li ng-class="{active:isActive('/return')}""><a href="#/return"><b>Return a car</b></a></li>
+                    <li ng-class="{active:isActive('/return')}"
+                    "><a href="#/return"><b>Return a car</b></a></li>
                 </ul>
-                <button class="btn btn-success navbar-btn navbar-right" ng-click="homeHeaderCtrl.logInBtnClicked()">{{homeHeaderCtrl.logBtnTitle}}</button>
+                <button class="btn btn-success navbar-btn navbar-right" ng-click="homeHeaderCtrl.logInBtnClicked()">
+                    {{homeHeaderCtrl.logBtnTitle}}
+                </button>
             </div>
         </div>
     </div>
@@ -81,7 +65,7 @@
             </p>
 
             <p>
-                <button class="btn btn-info" ng-click="MainCtrl.bookNowBtnClicked()">Book now &nbsp >></button>
+                <button class="btn btn-info" ng-click="bookNowBtnClicked()">Book now &nbsp >></button>
             </p>
         </div>
         <!--RECIEVE AN OFFER-->
@@ -96,21 +80,47 @@
 
             <form class="form-inline" role="form">
                 <div class="form-group">
-                    <label class="sr-only" for="pickUpDate">Pick up date: </label>
-                    <input class="form-control" placeholder="Pick up date" type="datetime"/>
+
+                    <!--<input class="form-control" placeholder="Pick up date" type="datetime" required/>-->
+                    <div class="input-group">
+                        <label class="sr-only" for="pickUpDate">Pick up date: </label>
+                        <input type="text" class="form-control" datepicker-popup="{{format}}"
+                               ng-model="startDate" is-open="opened"
+                               min-date="minDate" max-date="endDate"
+                               datepicker-options="dateOptions"
+                               date-disabled="disabled(date, mode)" ng-required="true"
+                               close-text="Close"/>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="open($event)"><i
+                                class="glyphicon glyphicon-calendar"></i>
+                        </button>
+                   </span>
+                    </div>
                 </div>
 
 
                 <div class="form-group">
-                    <label class="sr-only" for="dropOffDate">Drop off date:</label>
-                    <input class="form-control" placeholder="Drop off date" class="col-xs-3" type="datetime"/>
+
+                    <!--<input class="form-control" placeholder="Drop off date" class="col-xs-3" type="datetime"/>-->
+                    <div class="input-group">
+                        <label class="sr-only" for="dropOffDate">Drop off date:</label>
+                        <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="endDate"
+                               is-open="opened" min-date="startDate" max-date="'2015-06-22'"
+                               datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true"
+                               close-text="Close"/>
+
+                        <span class="input-group-btn">
+                          <button type="button" class="btn btn-default" ng-click="open($event)"><i
+                        class="glyphicon glyphicon-calendar"></i></button>
+                         </span>
+                    </div>
                 </div>
 
 
                 <div class="form-group">
                     <div class="input-group">
                         <div class="input-group-addon">@</div>
-                        <input class="form-control" placeholder="Enter email" class="col-xs-3" type="email"/>
+                        <input class="form-control" placeholder="Enter email" class="col-xs-3" type="email" ng-required="true"/>
                     </div>
                 </div>
 
@@ -139,24 +149,25 @@
     </div>
 </div>
 <style>
+    .dropdown-menu{
+        margin-bottom: 60px;
+    }
     body {
         padding-top: 70px;
         padding-bottom: 50px;
     }
-    .jumbotron h1{
+
+    .jumbotron h1 {
         color: orangered;
     }
-    .carMediumImgPlaceHolder{
-        width:350px;
+
+    .carMediumImgPlaceHolder {
+        width: 350px;
         height: 177px;
         opacity: 0;
     }
-    .well h1,.well form{
+
+    .well h1, .well form {
         text-align: center;
     }
 </style>
-
-
-
-<!--</body>-->
-<!--</html>-->
