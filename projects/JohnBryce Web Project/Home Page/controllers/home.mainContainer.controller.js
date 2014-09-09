@@ -48,27 +48,34 @@
         /* OFFER WELL
          * Date picker
          * */
-        scope.today = function () {
-            scope.startDate = new Date();
-        };
-        scope.disabled = function (date, mode) {
-            return ( mode === 'day' && ( date.getDay() === 0 || date.getDay() === 6 ) );
-        };
-        scope.open = function ($event) {
-           $event.preventDefault();
-           $event.stopPropagation();
-            scope.opened = true;
-        };
+        scope.sendNewsletter = false;
+        scope.startDate = new Date();
+        scope.minDate = scope.startDate;
+        //TODO: change - start date plus 7 days
+        scope.endDate = new Date(scope.startDate.getTime() + 7 * 24 * 60 * 60 * 1000);
         scope.dateOptions = {
-            formatYear: 'yy',
-            startingDay: 1,
-
-        };
-
-
-        scope.initDate = new Date('2016-15-20');
-        scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
-        scope.format = scope.formats[0];
+            showWeeks: 'false',
+            maxMode: 'day'
+        }
+        //start date picker
+        scope.open1 = function ($event) {
+            $event.preventDefault();
+            $event.stopPropagation();
+            scope.opened2 = false;
+            scope.opened1 = true;
+        }
+        //end date picker
+        scope.open2 = function ($event) {
+            $event.preventDefault();
+            $event.stopPropagation();
+            scope.opened1 = false;
+            scope.opened2 = true;
+        }
+        scope.sendBtnClicked = function () {
+            if(this.offerForm.$valid) {
+                console.log(scope.startDate + "\n" + scope.endDate + "\n" + scope.email + "\n" + scope.sendNewsletter)
+            }else(console.log("form invalid"))
+        }
 
 
     }

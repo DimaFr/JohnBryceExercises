@@ -78,41 +78,37 @@
             <br>
 
 
-            <form class="form-inline" role="form">
+            <form name="offerForm" class="form-inline" role="form">
                 <div class="form-group">
 
-                    <!--<input class="form-control" placeholder="Pick up date" type="datetime" required/>-->
                     <div class="input-group">
-                        <label class="sr-only" for="pickUpDate">Pick up date: </label>
-                        <input type="text" class="form-control" datepicker-popup="{{format}}"
-                               ng-model="startDate" is-open="opened"
-                               min-date="minDate" max-date="endDate"
-                               datepicker-options="dateOptions"
-                               date-disabled="disabled(date, mode)" ng-required="true"
-                               close-text="Close"/>
-                    <span class="input-group-btn">
-                        <button type="button" class="btn btn-default" ng-click="open($event)"><i
-                                class="glyphicon glyphicon-calendar"></i>
-                        </button>
-                   </span>
+                        <label class="sr-only" for="pickUpDate">Pick up date:</label>
+                        <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="startDate"
+                               is-open="opened1" min-date="minDate" max-date="endDate"
+                               show-button-bar="false"
+                               datepicker-options="dateOptions" date-disabled="disabled(date, mode)"
+                               ng-required="true" close-text="Close"/>
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="open1($event)"><i
+                        class="glyphicon glyphicon-calendar"></i></button>
+              </span>
                     </div>
                 </div>
 
 
                 <div class="form-group">
-
-                    <!--<input class="form-control" placeholder="Drop off date" class="col-xs-3" type="datetime"/>-->
                     <div class="input-group">
                         <label class="sr-only" for="dropOffDate">Drop off date:</label>
                         <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="endDate"
-                               is-open="opened" min-date="startDate" max-date="'2015-06-22'"
-                               datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true"
-                               close-text="Close"/>
+                               is-open="opened2" min-date="startDate" max-date="'2015-06-22'"
+                               show-button-bar="false"
 
-                        <span class="input-group-btn">
-                          <button type="button" class="btn btn-default" ng-click="open($event)"><i
+                               datepicker-options="dateOptions" date-disabled="disabled(date, mode)"
+                               ng-required="true" close-text="Close"/>
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="open2($event)"><i
                         class="glyphicon glyphicon-calendar"></i></button>
-                         </span>
+              </span>
                     </div>
                 </div>
 
@@ -120,19 +116,19 @@
                 <div class="form-group">
                     <div class="input-group">
                         <div class="input-group-addon">@</div>
-                        <input class="form-control" placeholder="Enter email" class="col-xs-3" type="email" ng-required="true"/>
+                        <input ng-model="email" class="form-control" placeholder="Enter email" class="col-xs-3"
+                               type="email" ng-required="true"/>
                     </div>
                 </div>
 
 
-                <button class="btn btn-success" ng-click="" type="submit">Send</button>
+                <button class="btn btn-success" ng-click="sendBtnClicked()" type="submit">Send</button>
                 <div class="checkbox">
                     <label>
-                        <input type="checkbox"> Receive our newsletter with hottest deals.
+                        <input type="checkbox" ng-model="sendNewsletter"> Receive our newsletter with hottest deals.
                     </label>
                 </div>
             </form>
-
 
         </div>
 
@@ -149,6 +145,11 @@
     </div>
 </div>
 <style>
+    *:focus {
+        /*border-color: none;*/
+        /*box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(126, 239, 104, 0.6);*/
+        outline: 0 none;
+    }
     .dropdown-menu{
         margin-bottom: 60px;
     }
