@@ -24,7 +24,7 @@
                 //scope.user = {};
                 //move to other page
                 //$location.path("/HelloUser");
-                modalInstance.close(scope.user)
+                modalInstance.close(scope.user);
             }
         }
 

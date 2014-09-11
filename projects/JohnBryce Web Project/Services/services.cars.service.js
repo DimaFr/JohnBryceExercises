@@ -12,6 +12,7 @@
         console.log("DataService loaded");
         var _model = [];
         var _currentUser = {};
+        //TODO: check if web storage exists
         var _saveState = function (model) {
             localStorage.usersData = angular.toJson(model);
         };
