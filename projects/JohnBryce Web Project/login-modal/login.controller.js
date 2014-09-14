@@ -3,9 +3,9 @@
  */
 (function (window, angular) {
     angular.module('carRentApp')
-        .controller({'SignInController':['$scope','$modalInstance',signInController]})
+        .controller({'SignInController':['$scope','$modalInstance','DataService',signInController]})
 
-    function signInController(scope,modalInstance) {
+    function signInController(scope,modalInstance,DataService) {
       //  DataService, AuthService, $location
 //        this.users = DataService.RestoreState();
 //        //actually this is credentials
@@ -27,17 +27,29 @@
 //                $location.path("/HelloUser");
 //            }
 //        };
-        scope.signInUser = function () {
+        scope.showSignInFail = false;
+        scope.signInUser = function (user) {
             console.log('signinUser clicked');
+            var currentUser;
 
-            if(scope.user && scope.password){
-            //todo: Q defer - authenticate
-                modalInstance.close({user: "login"})
+            if(user && user.username && user.password){
+
+                currentUser = DataService.UserExists(user.username,user.password);
+
+                if (currentUser){
+                    scope.showSignInFail=false;
+                    modalInstance.close({state: "login",currentUser:currentUser})
+                }else{
+                    scope.showSignInFail=true;
+                }
+
             }
+            console.log(currentUser);
         }
         scope.createAccountBtn = function(){
             console.log('createAccoutBtn clicked');
-            modalInstance.close({user:"register"})
+            //todo: check if username exists if exists through message
+            modalInstance.close({state:"register"})
         }
         scope.cancel = function () {
             console.log("cancel clicked");

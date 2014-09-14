@@ -42,13 +42,39 @@
 
             return _currentUser;
         }
+        //check if user exist or authenticate
+        //in case user exists returns object
+        var _userExists = function(username,password){
+                var userExists = null;
+             var users = _restoreState()
+           // check if array has objects
+            if (users.length)
+            {
+                for (var i = 1;i<users.length;i++){
+                    if(users[i].username == username && users[i].password==password){
+                        userExists=users[i];
+                        return userExists;
+                        break;
+                    }
+
+                }
+            }
+            return userExists;
+        }
+
+
+
+
+
+
         var DataService = {
             //model: _model,
             //currentUser:_currentUser,
             SaveState: _saveState,
             RestoreState: _restoreState,
             SaveCurrentUser: _saveCurrentUser,
-            RestoreCurrentUser: _restoreCurrentUser
+            RestoreCurrentUser: _restoreCurrentUser,
+            UserExists:_userExists
         }
         return DataService;
     }

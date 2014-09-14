@@ -37,16 +37,18 @@
                     templateUrl: 'login-modal/login.html',
                     controller: 'SignInController',
                     resolve: function () {
+
                     },
                     size: 'sm'
                 })
 
                 modalInstance.result.then(function (result) {
-                    if (result.user == "login") {
-                        log.debug(result.user);
+                    if (result.state == "login") {
+                        log.debug("login success");
+                        log.info(result.currentUser);
                     }
-                    if (result.user == "register") {
-                        log.debug(result.user);
+                    if (result.state == "register") {
+                        log.debug(result.state);
                         openRegisterModal();
                     }
                 }, function (msg) {
@@ -68,11 +70,11 @@
                 size: 'sm'
             })
             modalInstance.result.then(function (result) {
-                if (result.user == "login") {
-                    log.debug("2: " + result.user);
+                if (result.state == "login") {
+                    log.debug("2: " + result.state);
                 }
-                if (result.user == "register") {
-                    log.debug("2: " + result.user);
+                if (result.state == "register") {
+                    log.debug("2: " + result.state);
                 }
             }, function (msg) {
                 log.info("2: Modal dismissed with data: " + msg + " at: " + new Date());
