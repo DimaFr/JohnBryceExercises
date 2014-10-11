@@ -75,6 +75,8 @@
             if(this.offerForm.$valid) {
                 console.log(scope.startDate + "\n" + scope.endDate + "\n" + scope.email + "\n" + scope.sendNewsletter)
             }else(console.log("form invalid"))
+            this.focus=isDisabled;
+
         }
 
 

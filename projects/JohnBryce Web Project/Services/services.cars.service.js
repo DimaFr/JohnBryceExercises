@@ -27,26 +27,19 @@
             localStorage.currentUser = angular.toJson(user);
         };
 
-
         //TODO: create defer or find how to load factory before controllers
-
-
 
         var _restoreCurrentUser = function () {
 
-
-
                 _currentUser = angular.fromJson(localStorage.currentUser) || {};
-
-
 
             return _currentUser;
         }
         //check if user exist or authenticate
         //in case user exists returns object
         var _userExists = function(username,password){
-                var userExists = null;
-             var users = _restoreState()
+             var userExists = null;
+             var users = _restoreState();
            // check if array has objects
             if (users.length)
             {
@@ -61,10 +54,6 @@
             }
             return userExists;
         }
-
-
-
-
 
 
         var DataService = {

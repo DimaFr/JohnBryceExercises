@@ -25,8 +25,7 @@
                     <li ng-class="{active:isActive('/')}"><a href="#/about"><b>About</b></a></li>
                     <li ng-class="{active:isActive('/cars')}"><a href="#/cars"><b>Our cars</b></a></li>
                     <li ng-class="{active:isActive('/book')}"><a href="#/book"><b>Book a car</b></a></li>
-                    <li ng-class="{active:isActive('/return')}"
-                    "><a href="#/return"><b>Return a car</b></a></li>
+                    <li ng-class="{active:isActive('/return')}"><a href="#/return"><b>Return a car</b></a></li>
                 </ul>
                 <button class="btn btn-success navbar-btn navbar-right" ng-click="homeHeaderCtrl.logInBtnClicked()">
                     {{homeHeaderCtrl.logBtnTitle}}
@@ -116,13 +115,13 @@
                 <div class="form-group">
                     <div class="input-group">
                         <div class="input-group-addon">@</div>
-                        <input ng-model="email" class="form-control" placeholder="Enter email" class="col-xs-3"
+                        <input ng-model="email" class="form-control col-xs-3" placeholder="Enter email"
                                type="email" ng-required="true"/>
                     </div>
                 </div>
 
 
-                <button class="btn btn-success" ng-click="sendBtnClicked()" type="submit">Send</button>
+                <button  class="btn btn-success" ng-click="sendBtnClicked()" type="submit">Send</button>
                 <div class="checkbox">
                     <label>
                         <input type="checkbox" ng-model="sendNewsletter"> Receive our newsletter with hottest deals.
@@ -146,7 +145,7 @@
 </div>
 <style>
     *:focus {
-        /*border-color: none;*/
+        border-color: none;
         /*box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(126, 239, 104, 0.6);*/
         outline: 0 none;
     }
