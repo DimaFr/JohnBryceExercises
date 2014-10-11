@@ -38,6 +38,7 @@
 
                 if (currentUser){
                     scope.showSignInFail=false;
+                    DataService.SaveCurrentUser(currentUser);
                     modalInstance.close({state: "login",currentUser:currentUser})
                 }else{
                     scope.showSignInFail=true;
