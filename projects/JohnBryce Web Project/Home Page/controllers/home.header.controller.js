@@ -3,45 +3,30 @@
  */
 (function (window, angular) {
     angular.module('carRentApp')
-        .controller({'HomeHeaderController': ['$modal', '$log', '$location', 'DataService', headerController]})
+        .controller({'HomeHeaderController': ['$scope','$modal', '$log', '$location', 'DataService', headerController]})
 
-    function headerController(modal, log, location, DataService) {
+    function headerController(scope,modal,log,location,DataService) {
 //highlight the relevant "btn" than page open
-        this.isActive = function (viewLocation) {
+        scope.isActive = function (viewLocation) {
             var path = location.$$path;
             return viewLocation === path;
         };
        var user = DataService.RestoreCurrentUser();
 
        if(user.username) {
-           this.loggedUsername = "Hello " + user.username;
-           this.logBtnTitle = "Log out";
+           scope.loggedUsername = "Hello " + user.username;
+           scope.logBtnTitle = "Log out";
        }
         else{
-           this.loggedUsername = "";
-           this.logBtnTitle = "Register/Login";
+           scope.loggedUsername = "";
+           scope.logBtnTitle = "Register/Login";
        }
 
-//        var timeStamp = new Date().getTime();
-//        console.log(timeStamp + "header controller loaded")
-//
-//
-//        var userLogged = false;
-//        console.log(DataService.RestoreCurrentUser().username);
-//        //if their is user
-//        if (DataService.RestoreCurrentUser().username) {
-//            userLogged = true;
-//            console.log(DataService.RestoreCurrentUser().username);
-//        }
-//
-//        this.logBtnTitle = userLogged ? "Log Out" : "Register/Login";
-
-
-        this.logInBtnClicked = function () {
+        scope.logInBtnClicked = function () {
 
             console.log('logInBtnClicked');
 
-            if (this.logBtnTitle == "Register/Login") {
+            if (scope.logBtnTitle == "Register/Login") {
 
                 var modalInstance = modal.open({
                     templateUrl: 'login-modal/login.html',
@@ -58,11 +43,11 @@
                         log.info(result.currentUser);
 
                         //TODO: doesnot work should pass resuly and update this.btn and this.currentUser
-                        updateCurrentUser(result.currentUser);
+                       // updateCurrentUser(result.currentUser);
 
-                        // REMOVE does not work
-                        this.logBtnTitle = "Log Out";
-                        this.loggedUsername = "Hello "+name;
+
+                        scope.logBtnTitle = "Log Out";
+                        scope.loggedUsername = "Hello "+result.currentUser.username;
 
                     }
                     if (result.state == "register") {
@@ -76,8 +61,8 @@
 
             } else {
                 DataService.SaveCurrentUser(null);
-                this.logBtnTitle = "Register/Login";
-                this.loggedUsername = null;
+                scope.logBtnTitle = "Register/Login";
+                scope.loggedUsername = null;
             }
         }
         function openRegisterModal() {
@@ -100,17 +85,6 @@
             });
         }
 
-        function updateCurrentUser(user) {
-            var name = user.username;
-            if(name){
-                this.logBtnTitle = "Log Out";
-                this.loggedUsername = "Hello "+name;
-            }else{
-                this.logBtnTitle = "Register/Login";
-                this.loggedUsername="";
-            }
-
-        }
     }
 
 

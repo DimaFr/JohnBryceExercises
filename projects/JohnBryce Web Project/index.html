@@ -46,9 +46,9 @@
 
 
 <div ng-controller="HomeMainController">
-
+    <!--HEADER-->
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation"
-         ng-controller="HomeHeaderController as homeHeaderCtrl">
+         ng-controller="HomeHeaderController">
         <div class="container">
             <div class="navbar-header">
                 <!--create button which will dropdown the collapsed navbar buttons-->
@@ -60,20 +60,25 @@
                     <span class="icon-bar"></span>
                 </button>
 
-                <div class="navbar-brand" ng-class="{active:homeHeaderCtrl.isActive('/')}"><a href="#/"><b>DMF Car Rent</b></a></div>
+                <div class="navbar-brand" ng-class="{active:isActive('/')}"><a href="#/"><b>DMF Car Rent</b></a></div>
+                <div class="navbar-text navbar-right" >
+                    <b> {{loggedUsername}} </b>
+                </div>
+
             </div>
 
 
             <!--list of collapsable elements-->
             <div class="collapse navbar-collapse navbar-right" id="navHeaderCollapse">
                 <ul class="nav navbar-nav">
-                    <li ng-class="{active:homeHeaderCtrl.isActive('/about')}"><a href="#/about"><b>About</b></a></li>
-                    <li ng-class="{active:homeHeaderCtrl.isActive('/cars')}"><a href="#/cars"><b>Our cars</b></a></li>
-                    <li ng-class="{active:homeHeaderCtrl.isActive('/book')}"><a href="#/book"><b>Book a car</b></a></li>
-                    <li ng-class="{active:homeHeaderCtrl.isActive('/return')}"><a href="#/return"><b>Return a car</b></a></li>
+                    <li ng-class="{active:isActive('/about')}"><a href="#/about"><b>About</b></a></li>
+                    <li ng-class="{active:isActive('/cars')}"><a href="#/cars"><b>Our cars</b></a></li>
+                    <li ng-class="{active:isActive('/book')}"><a href="#/book"><b>Book a car</b></a></li>
+                    <li ng-class="{active:isActive('/return')}"><a href="#/return"><b>Return a car</b></a></li>
                 </ul>
-                <button class="btn btn-success navbar-btn navbar-right" ng-click="homeHeaderCtrl.logInBtnClicked()">
-                    {{homeHeaderCtrl.logBtnTitle}}
+                <!--TODO: toogle btn class : success / default -->
+                <button class="btn btn-success navbar-btn navbar-right" ng-click="logInBtnClicked()">
+                    {{logBtnTitle}}
                 </button>
             </div>
         </div>

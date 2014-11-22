@@ -2,38 +2,38 @@
 
 <div ng-controller="HomeMainController">
 
-    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation"
-         ng-controller="HomeHeaderController as homeHeaderCtrl">
-        <div class="container">
-            <div class="navbar-header">
-                <!--create button which will dropdown the collapsed navbar buttons-->
-                <button class="navbar-toggle" data-toggle="collapse" data-target="#navHeaderCollapse">
-                    <!--TODO: check the sr values-->
-                    <span class="sr-only sr-only-focusable">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
+    <!--<-- <div class="navbar navbar-inverse navbar-fixed-top" role="navigation"-->
+         <!--ng-controller="HomeHeaderController">-->
+        <!--<div class="container">-->
+            <!--<div class="navbar-header">-->
+                <!--&lt;!&ndash;create button which will dropdown the collapsed navbar buttons&ndash;&gt;-->
+                <!--<button class="navbar-toggle" data-toggle="collapse" data-target="#navHeaderCollapse">-->
+                    <!--&lt;!&ndash;TODO: check the sr values&ndash;&gt;-->
+                    <!--<span class="sr-only sr-only-focusable">Toggle navigation</span>-->
+                    <!--<span class="icon-bar"></span>-->
+                    <!--<span class="icon-bar"></span>-->
+                    <!--<span class="icon-bar"></span>-->
+                <!--</button>-->
 
-                <div class="navbar-brand"><b>DMF Car Rent</b></div>
-                <div class="navbar-brand">{{homeHeaderCtrl.loggedUsername}}</div>
-            </div>
+                <!--<div class="navbar-brand"><b>DMF Car Rent</b></div>-->
+                <!--<div class="navbar-brand">{{loggedUsername}}</div>-->
+            <!--</div>-->
 
 
-            <!--list of collapsable elements-->
-            <div class="collapse navbar-collapse navbar-right" id="navHeaderCollapse">
-                <ul class="nav navbar-nav">
-                    <li ng-class="{active:isActive('/')}"><a href="#/about"><b>About</b></a></li>
-                    <li ng-class="{active:isActive('/cars')}"><a href="#/cars"><b>Our cars</b></a></li>
-                    <li ng-class="{active:isActive('/book')}"><a href="#/book"><b>Book a car</b></a></li>
-                    <li ng-class="{active:isActive('/return')}"><a href="#/return"><b>Return a car</b></a></li>
-                </ul>
-                <button class="btn btn-success navbar-btn navbar-right" ng-click="homeHeaderCtrl.logInBtnClicked()">
-                    {{homeHeaderCtrl.logBtnTitle}}
-                </button>
-            </div>
-        </div>
-    </div>
+            <!--&lt;!&ndash;list of collapsable elements&ndash;&gt;-->
+            <!--<div class="collapse navbar-collapse navbar-right" id="navHeaderCollapse">-->
+                <!--<ul class="nav navbar-nav">-->
+                    <!--<li ng-class="{active:isActive('/')}"><a href="#/about"><b>About</b></a></li>-->
+                    <!--<li ng-class="{active:isActive('/cars')}"><a href="#/cars"><b>Our cars</b></a></li>-->
+                    <!--<li ng-class="{active:isActive('/book')}"><a href="#/book"><b>Book a car</b></a></li>-->
+                    <!--<li ng-class="{active:isActive('/return')}"><a href="#/return"><b>Return a car</b></a></li>-->
+                <!--</ul>-->
+                <!--<button class="btn btn-success navbar-btn navbar-right" ng-click="logInBtnClicked()">-->
+                    <!--{{logBtnTitle}}-->
+                <!--</button>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
     <!--JUMBOTRON CONTENT-->
     <!--TODO: create template and implement carousel with three different offers-->
     <div class="container" role="main" ng-controller="HomeMainContainerController">
