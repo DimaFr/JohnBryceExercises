@@ -1,38 +1,36 @@
-
-
 <div ng-controller="HomeMainController">
 
     <!--<-- <div class="navbar navbar-inverse navbar-fixed-top" role="navigation"-->
-         <!--ng-controller="HomeHeaderController">-->
-        <!--<div class="container">-->
-            <!--<div class="navbar-header">-->
-                <!--&lt;!&ndash;create button which will dropdown the collapsed navbar buttons&ndash;&gt;-->
-                <!--<button class="navbar-toggle" data-toggle="collapse" data-target="#navHeaderCollapse">-->
-                    <!--&lt;!&ndash;TODO: check the sr values&ndash;&gt;-->
-                    <!--<span class="sr-only sr-only-focusable">Toggle navigation</span>-->
-                    <!--<span class="icon-bar"></span>-->
-                    <!--<span class="icon-bar"></span>-->
-                    <!--<span class="icon-bar"></span>-->
-                <!--</button>-->
+    <!--ng-controller="HomeHeaderController">-->
+    <!--<div class="container">-->
+    <!--<div class="navbar-header">-->
+    <!--&lt;!&ndash;create button which will dropdown the collapsed navbar buttons&ndash;&gt;-->
+    <!--<button class="navbar-toggle" data-toggle="collapse" data-target="#navHeaderCollapse">-->
+    <!--&lt;!&ndash;TODO: check the sr values&ndash;&gt;-->
+    <!--<span class="sr-only sr-only-focusable">Toggle navigation</span>-->
+    <!--<span class="icon-bar"></span>-->
+    <!--<span class="icon-bar"></span>-->
+    <!--<span class="icon-bar"></span>-->
+    <!--</button>-->
 
-                <!--<div class="navbar-brand"><b>DMF Car Rent</b></div>-->
-                <!--<div class="navbar-brand">{{loggedUsername}}</div>-->
-            <!--</div>-->
+    <!--<div class="navbar-brand"><b>DMF Car Rent</b></div>-->
+    <!--<div class="navbar-brand">{{loggedUsername}}</div>-->
+    <!--</div>-->
 
 
-            <!--&lt;!&ndash;list of collapsable elements&ndash;&gt;-->
-            <!--<div class="collapse navbar-collapse navbar-right" id="navHeaderCollapse">-->
-                <!--<ul class="nav navbar-nav">-->
-                    <!--<li ng-class="{active:isActive('/')}"><a href="#/about"><b>About</b></a></li>-->
-                    <!--<li ng-class="{active:isActive('/cars')}"><a href="#/cars"><b>Our cars</b></a></li>-->
-                    <!--<li ng-class="{active:isActive('/book')}"><a href="#/book"><b>Book a car</b></a></li>-->
-                    <!--<li ng-class="{active:isActive('/return')}"><a href="#/return"><b>Return a car</b></a></li>-->
-                <!--</ul>-->
-                <!--<button class="btn btn-success navbar-btn navbar-right" ng-click="logInBtnClicked()">-->
-                    <!--{{logBtnTitle}}-->
-                <!--</button>-->
-            <!--</div>-->
-        <!--</div>-->
+    <!--&lt;!&ndash;list of collapsable elements&ndash;&gt;-->
+    <!--<div class="collapse navbar-collapse navbar-right" id="navHeaderCollapse">-->
+    <!--<ul class="nav navbar-nav">-->
+    <!--<li ng-class="{active:isActive('/')}"><a href="#/about"><b>About</b></a></li>-->
+    <!--<li ng-class="{active:isActive('/cars')}"><a href="#/cars"><b>Our cars</b></a></li>-->
+    <!--<li ng-class="{active:isActive('/book')}"><a href="#/book"><b>Book a car</b></a></li>-->
+    <!--<li ng-class="{active:isActive('/return')}"><a href="#/return"><b>Return a car</b></a></li>-->
+    <!--</ul>-->
+    <!--<button class="btn btn-success navbar-btn navbar-right" ng-click="logInBtnClicked()">-->
+    <!--{{logBtnTitle}}-->
+    <!--</button>-->
+    <!--</div>-->
+    <!--</div>-->
     <!--</div>-->
     <!--JUMBOTRON CONTENT-->
     <!--TODO: create template and implement carousel with three different offers-->
@@ -70,13 +68,6 @@
         </div>
         <!--RECIEVE AN OFFER-->
         <div class="well">
-
-            <h1>Book your car now.
-                <small>Choose your dates and we will return to you with our best offer.</small>
-            </h1>
-
-            <br>
-
 
             <form name="offerForm" class="form-inline" role="form">
                 <div class="form-group">
@@ -122,53 +113,48 @@
                 </div>
 
 
-                <button  class="btn btn-success" ng-click="sendBtnClicked()" type="submit">Send</button>
+                <button class="btn btn-success" ng-click="sendBtnClicked()" type="submit">Send</button>
                 <div class="checkbox">
                     <label>
                         <input type="checkbox" ng-model="sendNewsletter"> Receive our newsletter with hottest deals.
                     </label>
                 </div>
             </form>
-
+            <h1>Book your car now.
+                <small>Choose your dates and we will return to you with our best offer.</small>
+            </h1>
         </div>
 
-
     </div>
-    <!--FOOTER-->
-    <div class="navbar navbar-default navbar-fixed-bottom" ng-controller="HomeFooterController as homeFooterCtrl">
-        <div class="container">
+    <style>
+        *:focus {
+            /*border-color: none;*/
+            /*box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(126, 239, 104, 0.6);*/
+            outline: 0 none;
+        }
 
-            <p class="navbar-text navbar-left">&copy{{homeFooterCtrl.copyrightYear}} The DMF Car Rent - All rights
-                Reserved.</p>
+        .dropdown-menu {
+            margin-bottom: 60px;
+        }
 
-        </div>
-    </div>
-</div>
-<style>
-    *:focus {
-        /*border-color: none;*/
-        /*box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(126, 239, 104, 0.6);*/
-        outline: 0 none;
-    }
-    .dropdown-menu{
-        margin-bottom: 60px;
-    }
-    body {
-        padding-top: 70px;
-        padding-bottom: 50px;
-    }
+        body {
+            padding-top: 70px;
+            padding-bottom: 70px;
+        }
 
-    .jumbotron h1 {
-        color: orangered;
-    }
+        .jumbotron h1 {
+            color: orangered;
+        }
 
-    .carMediumImgPlaceHolder {
-        width: 350px;
-        height: 177px;
-        opacity: 0;
-    }
+        .carMediumImgPlaceHolder {
+            width: 350px;
+            height: 177px;
+            opacity: 0;
+        }
 
-    .well h1, .well form {
-        text-align: center;
-    }
-</style>
+        .well h1, .well form {
+            text-align: center;
+        }
+
+
+    </style>
