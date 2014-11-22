@@ -11,8 +11,16 @@
             var path = location.$$path;
             return viewLocation === path;
         };
+       var user = DataService.RestoreCurrentUser();
 
-        updateCurrentUser(this.logBtnTitle,this.loggedUsername);
+       if(user.username) {
+           this.loggedUsername = "Hello " + user.username;
+           this.logBtnTitle = "Log out";
+       }
+        else{
+           this.loggedUsername = "";
+           this.logBtnTitle = "Register/Login";
+       }
 
 //        var timeStamp = new Date().getTime();
 //        console.log(timeStamp + "header controller loaded")
@@ -48,7 +56,14 @@
                     if (result.state == "login") {
                         log.debug("login success");
                         log.info(result.currentUser);
-                        updateCurrentUser(this.logBtnTitle,this.loggedUsername);
+
+                        //TODO: doesnot work should pass resuly and update this.btn and this.currentUser
+                        updateCurrentUser(result.currentUser);
+
+                        // REMOVE does not work
+                        this.logBtnTitle = "Log Out";
+                        this.loggedUsername = "Hello "+name;
+
                     }
                     if (result.state == "register") {
                         log.debug(result.state);
@@ -62,6 +77,7 @@
             } else {
                 DataService.SaveCurrentUser(null);
                 this.logBtnTitle = "Register/Login";
+                this.loggedUsername = null;
             }
         }
         function openRegisterModal() {
@@ -84,14 +100,14 @@
             });
         }
 
-        function updateCurrentUser(btn,username) {
-            var name = DataService.RestoreCurrentUser().username;
+        function updateCurrentUser(user) {
+            var name = user.username;
             if(name){
-                btn = "Log Out";
-                username = "Hello "+name;
+                this.logBtnTitle = "Log Out";
+                this.loggedUsername = "Hello "+name;
             }else{
-                btn = "Register/Login";
-                username="";
+                this.logBtnTitle = "Register/Login";
+                this.loggedUsername="";
             }
 
         }
