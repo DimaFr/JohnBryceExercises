@@ -22,6 +22,11 @@
                     templateUrl:'Geolocation%20and%20Map/map.html',
                     controller:'MapController'
                 })
+                .state('about',{
+                    url:'/about',
+                    templateUrl:'About/about.html',
+                    controller:'AboutController'
+                       })
         })
 
 

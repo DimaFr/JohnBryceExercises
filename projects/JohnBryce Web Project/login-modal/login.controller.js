@@ -48,7 +48,7 @@
             console.log(currentUser);
         }
         scope.createAccountBtn = function(){
-            console.log('createAccoutBtn clicked');
+            console.log('createAccountBtn clicked');
             //todo: check if username exists if exists through message
             modalInstance.close({state:"register"})
         }
