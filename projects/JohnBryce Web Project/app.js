@@ -2,9 +2,16 @@
  * Created by dimitry.friedman on 8/5/2014.
  */
 (function (window, angular) {
-    angular.module('carRentApp', ['ngRoute', 'ui.bootstrap', 'ui.router','google-maps'])
+    angular.module('carRentApp', ['ngRoute', 'ui.bootstrap', 'ui.router','google-maps',
+        'mgcrea.ngStrap.helpers.dimensions','mgcrea.ngStrap.helpers.dateParser','mgcrea.ngStrap.tooltip','mgcrea.ngStrap.datepicker']);
+
     angular.module('carRentApp')
-        .config(function ($stateProvider, $urlRouterProvider) {
+
+        .config(function ($datepickerProvider,$stateProvider, $urlRouterProvider) {
+            angular.extend($datepickerProvider.defaults,{
+                dateFormat:'dd/MM/yyyy',
+                placement: 'top-left'
+            });
             $urlRouterProvider.otherwise('/');
             $stateProvider
                 .state('home', {

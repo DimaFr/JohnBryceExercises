@@ -6,11 +6,11 @@
     <link rel="stylesheet" href="../../components/bootstrap/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="Home%20Page/css/home.page.css"/>
     <script src="../../components/jquery/dist/jquery.js"></script>
-
+<!--TODO:check if bootstrap js in use-->
     <script src="../../components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
     <script src="../../components/angular/angular.js"></script>
-    <!--TODO: remove unused-->
+<!--TODO: remove unused-->
     <script src="../../components/angular-route/angular-route.js"></script>
     <script src="../../components/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="../../components/angular-bootstrap/ui-bootstrap.js"></script>
@@ -19,7 +19,11 @@
     <script src="../../components/lodash/dist/lodash.underscore.js"></script>
     <script src="../../components/angular-google-maps/dist/angular-google-maps.js"></script>
 
+    <!--new datepicker library-->
+    <script src="../../components/angular-strap/dist/angular-strap.min.js"></script>
+    <script src="../../components/angular-strap/dist/angular-strap.tpl.min.js"></script>
 
+    <!-- apps js -->
     <script src="app.js"></script>
     <script src="Home%20Page/controllers/home.footer.controller.js"></script>
     <script src="Home%20Page/controllers/home.header.controller.js"></script>
@@ -27,6 +31,7 @@
     <script src="Home%20Page/controllers/home.main.controller.js"></script>
     <script src="Services/services.cars.service.js"></script>
     <script src="About/about.main.controller.js"></script>
+    <script src="Home%20Page/home.datepicker.directive.js"></script>
 
     <!--<script src="Home%20Page/home.routing.js"></script>-->
 
@@ -87,8 +92,7 @@
         <!--SWITCHING STATES / VIEWS-->
     </div>
     <!--FOOTER-->
-    <div class="navbar navbar-default navbar-fixed-bottom ng-controller=" HomeFooterController as homeFooterCtrl
-    ">
+    <div class="navbar navbar-default navbar-fixed-bottom" ng-controller="HomeFooterController as homeFooterCtrl">
     <div class="container">
 
         <p class="navbar-text navbar-left">&copy{{homeFooterCtrl.copyrightYear}} The DMF Car Rent - All rights
@@ -108,8 +112,8 @@
     /* Sticky footer styles*/
     /*-------------------------------------------------- */
     /*html {*/
-        /*position: relative;*/
-        /*min-height: 100%;*/
+    /*position: relative;*/
+    /*min-height: 100%;*/
     /*}*/
 
     /*body {*/
@@ -117,12 +121,12 @@
     /*margin-bottom: 60px;*/
     /*}*/
     /*.footer {*/
-        /*position: absolute;*/
-        /*bottom: 0;*/
-        /*width: 100%;*/
-        /* Set the fixed height of the footer here */
-        /*height: 40px;*/
-        /*background-color: #f5f5f5;*/
+    /*position: absolute;*/
+    /*bottom: 0;*/
+    /*width: 100%;*/
+    /* Set the fixed height of the footer here */
+    /*height: 40px;*/
+    /*background-color: #f5f5f5;*/
     /*}*/
 
     body {

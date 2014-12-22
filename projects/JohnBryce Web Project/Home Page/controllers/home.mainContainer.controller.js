@@ -6,10 +6,10 @@
         .config(function(datepickerPopupConfig){
             datepickerPopupConfig.showButtonBar = false;
         })
-        .controller({'HomeMainContainerController': ['$scope', 'CarsFactory', mainContainerController]})
+        .controller({'HomeMainContainerController': ['$datepicker','$scope', 'CarsFactory', mainContainerController]})
 
 
-    function mainContainerController(scope, CarsFactory) {
+    function mainContainerController(datepicker,scope, CarsFactory) {
         var timeStamp = new Date().getTime();
         console.log(timeStamp + "container comtroller loaded")
 
@@ -44,33 +44,36 @@
             console.log(myCar);
 
         }
+        //NEW DATE PICKER
+        scope.newdatepicker = "New Date Picker Test";
+
 
         /* OFFER WELL
-         * Date picker
+         * Date picker OLD
          * */
         scope.sendNewsletter = false;
-        scope.startDate = new Date();
-        scope.minDate = scope.startDate;
-        //TODO: change - start date plus 7 days
-        scope.endDate = new Date(scope.startDate.getTime() + 7 * 24 * 60 * 60 * 1000);
-        scope.dateOptions = {
-            showWeeks: 'false',
-            maxMode: 'day'
-        }
-        //start date picker
-        scope.open1 = function ($event) {
-            $event.preventDefault();
-            $event.stopPropagation();
-            scope.opened2 = false;
-            scope.opened1 = true;
-        }
-        //end date picker
-        scope.open2 = function ($event) {
-            $event.preventDefault();
-            $event.stopPropagation();
-            scope.opened1 = false;
-            scope.opened2 = true;
-        }
+        //scope.startDate = new Date();
+        //scope.minDate = scope.startDate;
+        ////TODO: change - start date plus 7 days
+        //scope.endDate = new Date(scope.startDate.getTime() + 7 * 24 * 60 * 60 * 1000);
+        //scope.dateOptions = {
+        //    showWeeks: 'false',
+        //    maxMode: 'day'
+        //}
+        ////start date picker
+        //scope.open1 = function ($event) {
+        //    $event.preventDefault();
+        //    $event.stopPropagation();
+        //    scope.opened2 = false;
+        //    scope.opened1 = true;
+        //}
+        ////end date picker
+        //scope.open2 = function ($event) {
+        //    $event.preventDefault();
+        //    $event.stopPropagation();
+        //    scope.opened1 = false;
+        //    scope.opened2 = true;
+        //}
         scope.sendBtnClicked = function () {
             if(this.offerForm.$valid) {
                 console.log(scope.startDate + "\n" + scope.endDate + "\n" + scope.email + "\n" + scope.sendNewsletter)
