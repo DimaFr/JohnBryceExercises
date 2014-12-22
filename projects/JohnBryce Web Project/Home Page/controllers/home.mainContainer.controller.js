@@ -45,7 +45,7 @@
 
         }
         //NEW DATE PICKER
-        scope.newdatepicker = "New Date Picker Test";
+
 
 
         /* OFFER WELL
@@ -76,9 +76,10 @@
         //}
         scope.sendBtnClicked = function () {
             if(this.offerForm.$valid) {
-                console.log(scope.startDate + "\n" + scope.endDate + "\n" + scope.email + "\n" + scope.sendNewsletter)
-            }else(console.log("form invalid"))
-            this.focus=isDisabled;
+                console.log(scope.fromDate + "\n" + scope.untilDate + "\n" + scope.email + "\n" + scope.sendNewsletter)
+            }else(console.log("form invalid"));
+            //TODO: check how remove focus from btn
+           //this.focus=isDisabled();
 
         }
 
