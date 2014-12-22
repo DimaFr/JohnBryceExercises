@@ -92,6 +92,9 @@
             var geocoder = new google.maps.Geocoder();
             var latLng = new google.maps.LatLng(lat, lng);
             geocoder.geocode({"latLng": latLng}, function (results, status) {
+
+                //TODO: check how to use notify
+                deferred.notify("loads");
                 if (status == google.maps.GeocoderStatus.OK) {
                     console.log(results);
                     deferred.resolve({results:results});
