@@ -6,11 +6,14 @@
     angular.module('carRentApp')
         .factory(
         {'CarsFactory': ["$http", carsFactory],
-        'DataService':["$q", dataService]});
+        'DataService':["$q", dataService],
+        'CarsManagerService':['CarsFactory',carsManagerService]});
 
     function dataService(){
         console.log("DataService loaded");
+        //model is all users
         var _model = [];
+        //user should have  name, email, psw, active_orders,complete_orders
         var _currentUser = {};
         //TODO: check if web storage exists
         var _saveState = function (model) {
@@ -43,7 +46,7 @@
            // check if array has objects
             if (users.length)
             {
-                for (var i = 1;i<users.length;i++){
+                for (var i = 0;i<users.length;i++){
                     if(users[i].username == username && users[i].password==password){
                         userExists=users[i];
                         return userExists;
@@ -76,6 +79,8 @@
         };
         var _cars;
 
+
+//get car object according to plate ID - return car function
         CarsFactory.getCarById = function (plateId) {
             var myCar;
             if (_cars) {
@@ -90,6 +95,7 @@
                 }
             }
             else {
+
                 this.getCarsData().then(function (response) {
                     this.getCarsById(plateId);
                 })
@@ -111,6 +117,13 @@
         CarsFactory.getCarsData();
         return CarsFactory;
     }
+    function carsManagerService(CarsFactory){
+        //initial load of cars to local storage
+        //book car from storage
+        //return car to storage
+
+    }
+
 
 
 }(window, angular));

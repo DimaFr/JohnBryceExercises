@@ -34,6 +34,8 @@
 
             if(user && user.username && user.password){
 
+
+
                 currentUser = DataService.UserExists(user.username,user.password);
 
                 if (currentUser){
