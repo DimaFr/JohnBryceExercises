@@ -5,6 +5,7 @@
     <title>Home DMF Rent </title>
     <link rel="stylesheet" href="../../components/bootstrap/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="Home%20Page/css/home.page.css"/>
+    <link rel="stylesheet" href="Home%20Page/css/animations.css"/>
     <script src="../../components/jquery/dist/jquery.js"></script>
 <!--TODO:check if bootstrap js in use-->
     <script src="../../components/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -32,6 +33,7 @@
     <script src="Services/services.cars.service.js"></script>
     <script src="About/about.main.controller.js"></script>
     <script src="Home%20Page/home.datepicker.directive.js"></script>
+    <script src="Home%20Page/home.sentoffer.directive.js"></script>
 
     <!--<script src="Home%20Page/home.routing.js"></script>-->
 
@@ -39,6 +41,8 @@
     <script src="register-modal/register.controller.js"></script>
 
     <script src="Cars-Page/cars.table.controller.js"></script>
+    <script src="Return-Page/return.controller.js"></script>
+    <script src="Book-Page/book.controller.js"></script>
 
     <script src="Geolocation%20and%20Map/controllers/map.main.controller.js"></script>
     <script src="Geolocation%20and%20Map/controllers/map.travelpoints.controller.js"></script>
@@ -67,7 +71,7 @@
 
                 <div class="navbar-brand" ng-class="{active:isActive('/')}"><a href="#/"><b>DMF Car Rent</b></a></div>
                 <div class="navbar-text navbar-right">
-                    <b> {{loggedUsername}} </b>
+                    <b class="loggedUsername"> {{loggedUsername}} </b>
                 </div>
 
             </div>
@@ -152,6 +156,9 @@
 
     .well h1, .well form {
         text-align: center;
+    }
+    .loggedUsername{
+        color:#5CB85C;
     }
 </style>
 

@@ -74,14 +74,19 @@
         //    scope.opened1 = false;
         //    scope.opened2 = true;
         //}
-        scope.sendBtnClicked = function () {
+        scope.sendBtnClicked = function(){
             if(this.offerForm.$valid) {
                 console.log(scope.fromDate + "\n" + scope.untilDate + "\n" + scope.email + "\n" + scope.sendNewsletter);
-
+                scope.offerSent = !scope.offerSent;
             }else(console.log("form invalid"));
             //TODO: check how remove focus from btn
            //this.focus=isDisabled();
 
+        }
+        scope.newOfferBtnClicked = function(){
+            scope.fromDate = null;
+            scope.untilDate = null;
+            scope.offerSent = !scope.offerSent;
         }
 
 

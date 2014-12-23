@@ -1,0 +1,14 @@
+.animate-show{
+    -webkit-transition: all linear 2.5s;
+    transition: all linear 2.5s;
+    line-height:20px;
+    opacity:1;
+    padding:10px;
+    background:white;
+
+}
+.animate-show.ng-hide {
+    line-height:0;
+    opacity:0;
+    padding:0 10px;
+}
