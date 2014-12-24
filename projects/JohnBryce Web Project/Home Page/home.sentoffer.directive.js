@@ -8,7 +8,7 @@
     function homeOffersent() {
         return {
             restrict: 'A',
-            templateUrl: 'Home%20Page/homeOffersent.html'
+            templateUrl: 'Home%20Page/homeSentoffer.html'
         };
     }
 
