@@ -1,0 +1,53 @@
+<div class="well">
+    <h1>Book your car now.
+        <small>Choose your dates and we will return to you with our best offer.</small>
+    </h1>
+
+
+    <form name="offerForm" class="form-inline" role="form">
+
+        <div class="form-group">
+
+            <div class="input-group">
+                <label class="sr-only" for="pickUpDate">Pick up date:</label>
+
+                <input type="text" class="form-control" ng-model="fromDate" data-max-date="{{untilDate}}" placeholder="From" ng-required="true" bs-datepicker>
+                    <span class="input-group-btn">
+                      <button type="button" class="btn btn-default" ng-click="open1($event)">
+                          <i class="glyphicon glyphicon-calendar"></i>
+                      </button>
+                    </span>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="input-group">
+                <label class="sr-only" for="dropOffDate">Drop off date:</label>
+                <input type="text" class="form-control" ng-model="untilDate" data-min-date="{{fromDate}}" placeholder="Until" ng-required="true" bs-datepicker>
+   <span class="input-group-btn">
+   <button type="button" class="btn btn-default" ng-click="open2($event)"><i
+           class="glyphicon glyphicon-calendar"></i></button>
+   </span>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-addon">@</div>
+                <input ng-model="email" class="form-control col-xs-3" placeholder="Enter email"
+                       type="email" ng-required="true"/>
+            </div>
+        </div>
+
+
+        <button class="btn btn-success" ng-click="sendBtnClicked()" type="submit">Send</button>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" ng-model="sendNewsletter"> Receive our newsletter with hottest deals.
+            </label>
+        </div>
+    </form>
+
+</div>

@@ -2,18 +2,21 @@
  * Created by dimitry.friedman on 8/5/2014.
  */
 (function (window, angular) {
-    angular.module('carRentApp', ['ngRoute', 'ui.bootstrap', 'ui.router','google-maps',
+    angular.module('carRentApp', ['ngRoute', 'ui.bootstrap', 'ui.router','google-maps','ngAnimate',
         'mgcrea.ngStrap.helpers.dimensions','mgcrea.ngStrap.helpers.dateParser','mgcrea.ngStrap.tooltip','mgcrea.ngStrap.datepicker']);
 
     angular.module('carRentApp')
 
         .config(function ($datepickerProvider,$stateProvider, $urlRouterProvider) {
+            //new datepicker configuration
             angular.extend($datepickerProvider.defaults,{
                 dateFormat:'dd/MM/yyyy',
                 placement: 'top-left'
             });
+
             $urlRouterProvider.otherwise('/');
             $stateProvider
+                //header navigation menu
                 .state('home', {
                     url: '/',
                     templateUrl: 'Home%20Page/home.html',
@@ -44,6 +47,7 @@
                     templateUrl:'Return-Page/return.html',
                     controller:'ReturnController'
                 })
+
 
         })
 
