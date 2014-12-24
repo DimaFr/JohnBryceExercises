@@ -45,6 +45,12 @@
 
         }
         //NEW DATE PICKER
+        //http://mgcrea.github.io/angular-strap/#/datepickers
+//TODO: remove for production
+        scope.fromDate = "2014-12-24T16:33:34.049Z";
+        scope.untilDate = "2014-12-24T16:33:34.049Z";
+        scope.email="dima@dima";
+        //end remove
 
 
 
@@ -84,8 +90,9 @@
 
         }
         scope.newOfferBtnClicked = function(){
-            scope.fromDate = null;
-            scope.untilDate = null;
+            //TODO:uncomment for production
+            //scope.fromDate = null;
+            //scope.untilDate = null;
             scope.offerSent = !scope.offerSent;
         }
 
