@@ -67,13 +67,14 @@
             </p>
         </div>
         <!--NEW DATE PICKER-->
-        <div  class="offer-show" ng-hide="offerSent" home-datepicker></div>
-        <div   class="offer-show" ng-show="offerSent" home-offersent></div>
+        <div  class="offer-show animate-slideUp" ng-show="offerSent" home-datepicker></div>
+        <div  class="offer-show animate-slideUp" ng-show="!offerSent" home-offersent></div>
 
 
 
 
     </div>
+ </div>
     <style>
         *:focus {
             /*border-color: none;*/
