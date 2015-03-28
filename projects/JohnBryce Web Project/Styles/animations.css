@@ -1,0 +1,43 @@
+/*.offer-show {*/
+
+    /*width: 100%;*/
+    /*height: 100%;*/
+    /*position: relative;*/
+    /*bottom: 0;*/
+    /*z-index: 5;*/
+    /*transition: 1s ease bottom !important;*/
+    /*display: block !important;*/
+/*}*/
+/*.offer-show.ng-hide {*/
+    /*bottom: 0;*/
+/*}*/
+
+.animate-slideUp.ng-hide-add,
+.animate-slideUp.ng-hide-remove {
+    -webkit-transform: translate(0px, 0px);
+    -moz-transform: translate(0px, 0px);
+    -ms-transform: translate(0px, 0px);
+    -o-transform: translate(0px, 0px);
+    transform: translate(0px, 0px);
+    opacity:1;
+    position:absolute;
+}
+
+.animate-slideUp.ng-hide {
+    -webkit-transition-property: -webkit-transform, opacity;
+    -moz-transition-property: -moz-transform, opacity;
+    -o-transition-property: -o-transform, opacity;
+    transition-property: transform, opacity;
+    -webkit-transition-duration: 1s;
+    -moz-transition-duration: 1s;
+    -o-transition-duration: 1s;
+    transition-duration: 1s;
+    -webkit-transform: translate(0px, -100%);
+    -moz-transform: translate(0px, -100%);
+    -ms-transform: translate(0px, -100%);
+    -o-transform: translate(0px, -100%);
+    transform: translate(0px, -100%);
+    overflow: hidden;
+    opacity:0;
+    position:absolute;
+}

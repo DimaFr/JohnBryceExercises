@@ -11,7 +11,8 @@
             <div class="input-group">
                 <label class="sr-only" for="pickUpDate">Pick up date:</label>
 
-                <input type="text" class="form-control" ng-model="fromDate" data-max-date="{{untilDate}}" placeholder="From" ng-required="true" bs-datepicker>
+                <input type="text" class="form-control" ng-model="fromDate" data-max-date="{{untilDate}}"
+                       placeholder="From" ng-required="true" bs-datepicker>
                     <span class="input-group-btn">
                       <button type="button" class="btn btn-default" ng-click="open1($event)">
                           <i class="glyphicon glyphicon-calendar"></i>
@@ -24,11 +25,12 @@
         <div class="form-group">
             <div class="input-group">
                 <label class="sr-only" for="dropOffDate">Drop off date:</label>
-                <input type="text" class="form-control" ng-model="untilDate" data-min-date="{{fromDate}}" placeholder="Until" ng-required="true" bs-datepicker>
-   <span class="input-group-btn">
-   <button type="button" class="btn btn-default" ng-click="open2($event)"><i
-           class="glyphicon glyphicon-calendar"></i></button>
-   </span>
+                <input type="text" class="form-control" ng-model="untilDate" data-min-date="{{fromDate}}"
+                       placeholder="Until" ng-required="true" bs-datepicker>
+                  <span class="input-group-btn">
+                   <button type="button" class="btn btn-default" ng-click="open2($event)"><i
+                    class="glyphicon glyphicon-calendar"></i></button>
+                  </span>
             </div>
         </div>
 

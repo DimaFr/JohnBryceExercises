@@ -35,12 +35,12 @@
                 .state('map',{
                     url:'/map',
                     templateUrl:'Geolocation%20and%20Map/map.html',
-                    controller:'MapController'
+                    controller:'TravelPointsController'
                 })
                 .state('book',{
                     url:'/book',
-                    templateUrl:'Book-Page/book.html',
-                    controller:'BookController'
+                    templateUrl:'Geolocation%20and%20Map-Page/map.html',
+                    controller:'TravelPointsController'
                 })
                 .state('return',{
                     url:'/return',

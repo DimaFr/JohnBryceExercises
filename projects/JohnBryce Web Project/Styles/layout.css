@@ -1,0 +1,19 @@
+/*Book a Car - Map Page*/
+/*button attached to input fields style*/
+/*span.input-group-btn .btn{*/
+    /*width:50px;*/
+/*}*/
+.mapAndDetails {
+    min-height: 400px;
+}
+.mapAndDetails .input-group{
+    padding-top: 10px;
+}
+.mapAndDetails .btn{
+    min-width: 50px;
+}
+/*override angular-map properties */
+.angular-google-map-container {
+    min-height: 400px;
+}
+
