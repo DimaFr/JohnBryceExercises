@@ -14,6 +14,7 @@
 
         scope.rentThisCar = function (thisCar) {
             console.log(thisCar.model);
+
          state.go('map')
         }
 

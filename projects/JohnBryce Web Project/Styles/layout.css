@@ -1,19 +1,53 @@
 /*Book a Car - Map Page*/
 /*button attached to input fields style*/
-/*span.input-group-btn .btn{*/
-    /*width:50px;*/
+span.input-group-btn .btn{
+    width:50px;
+}
+/*.mapAndDetails {*/
+    /*height: 400px;*/
 /*}*/
-.mapAndDetails {
-    min-height: 400px;
+.mapAndDetals .container{
+    padding-bottom: 100%;
+    margin-bottom: -100%;
 }
-.mapAndDetails .input-group{
-    padding-top: 10px;
+.travelDetails .input-group{
+   /*padding-top: 1px;*/
+   /*padding-bottom: 1px;*/
 }
-.mapAndDetails .btn{
-    min-width: 50px;
-}
+/*.mapAndDetails .btn{*/
+    /*min-width: 50px;*/
+/*}*/
 /*override angular-map properties */
 .angular-google-map-container {
     min-height: 400px;
 }
 
+/*DATEPICKER*/
+.datepicker.dropdown-menu {
+    width: 250px;
+    height: 250px;
+}
+.datepicker.dropdown-menu button {
+    outline: none;
+    border: 0px;
+}
+.datepicker.dropdown-menu tbody {
+    height: 180px;
+}
+.datepicker.dropdown-menu tbody button {
+    padding: 6px;
+}
+.datepicker.dropdown-menu.datepicker-mode-1 tbody button, .datepicker.dropdown-menu.datepicker-mode-2 tbody button {
+    height: 65px;
+}
+
+.timepicker.dropdown-menu {
+    padding: 0 4px;
+}
+.timepicker.dropdown-menu button {
+    outline: none;
+    border: 0px;
+}
+.timepicker.dropdown-menu tbody button {
+    padding: 6px;
+}
