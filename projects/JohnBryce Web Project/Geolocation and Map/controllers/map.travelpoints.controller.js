@@ -65,7 +65,8 @@
                     scope.map.markers.push({latitude: point.latitude, longitude: point.longitude});
                     scope.map.control.refresh({latitude: point.latitude, longitude: point.longitude});
 //                  scope.map.control.getGMap().setZoom(14);
-                    currentGMap.setZoom(14);
+                    //currentGMap.setZoom(14);
+                    scope.map.zoom = 16;
 
                 })
             });

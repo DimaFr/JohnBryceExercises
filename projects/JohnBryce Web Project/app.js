@@ -39,7 +39,7 @@
                 })
                 .state('book',{
                     url:'/book',
-                    templateUrl:'Geolocation%20and%20Map-Page/map.html',
+                    templateUrl:'Geolocation%20and%20Map/map.html',
                     controller:'TravelPointsController'
                 })
                 .state('return',{
@@ -47,7 +47,6 @@
                     templateUrl:'Return-Page/return.html',
                     controller:'ReturnController'
                 })
-
 
         })
 
